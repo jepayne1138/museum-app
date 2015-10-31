@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		380DA53D1BE5420100976988 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380DA53C1BE5420100976988 /* AppDelegate.swift */; };
+		380DA53F1BE5420100976988 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380DA53E1BE5420100976988 /* ViewController.swift */; };
+		380DA5421BE5420100976988 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380DA5401BE5420100976988 /* Main.storyboard */; };
+		380DA5451BE5420100976988 /* MuseumApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 380DA5431BE5420100976988 /* MuseumApp.xcdatamodeld */; };
+		380DA5471BE5420100976988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 380DA5461BE5420100976988 /* Assets.xcassets */; };
+		380DA54A1BE5420100976988 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380DA5481BE5420100976988 /* LaunchScreen.storyboard */; };
+		380DA5551BE5420100976988 /* MuseumAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380DA5541BE5420100976988 /* MuseumAppTests.swift */; };
+		380DA5601BE5420100976988 /* MuseumAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380DA55F1BE5420100976988 /* MuseumAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		380DA5511BE5420100976988 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 380DA5311BE5420100976988 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 380DA5381BE5420100976988;
+			remoteInfo = MuseumApp;
+		};
+		380DA55C1BE5420100976988 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 380DA5311BE5420100976988 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 380DA5381BE5420100976988;
+			remoteInfo = MuseumApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		380DA5391BE5420100976988 /* MuseumApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuseumApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		380DA53C1BE5420100976988 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		380DA53E1BE5420100976988 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		380DA5411BE5420100976988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		380DA5441BE5420100976988 /* MuseumApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MuseumApp.xcdatamodel; sourceTree = "<group>"; };
+		380DA5461BE5420100976988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		380DA5491BE5420100976988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		380DA54B1BE5420100976988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		380DA5501BE5420100976988 /* MuseumAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseumAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		380DA5541BE5420100976988 /* MuseumAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumAppTests.swift; sourceTree = "<group>"; };
+		380DA5561BE5420100976988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		380DA55B1BE5420100976988 /* MuseumAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseumAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		380DA55F1BE5420100976988 /* MuseumAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumAppUITests.swift; sourceTree = "<group>"; };
+		380DA5611BE5420100976988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		380DA5361BE5420100976988 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		380DA54D1BE5420100976988 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		380DA5581BE5420100976988 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		380DA5301BE5420100976988 = {
+			isa = PBXGroup;
+			children = (
+				380DA53B1BE5420100976988 /* MuseumApp */,
+				380DA5531BE5420100976988 /* MuseumAppTests */,
+				380DA55E1BE5420100976988 /* MuseumAppUITests */,
+				380DA53A1BE5420100976988 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		380DA53A1BE5420100976988 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				380DA5391BE5420100976988 /* MuseumApp.app */,
+				380DA5501BE5420100976988 /* MuseumAppTests.xctest */,
+				380DA55B1BE5420100976988 /* MuseumAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		380DA53B1BE5420100976988 /* MuseumApp */ = {
+			isa = PBXGroup;
+			children = (
+				380DA53C1BE5420100976988 /* AppDelegate.swift */,
+				380DA53E1BE5420100976988 /* ViewController.swift */,
+				380DA5401BE5420100976988 /* Main.storyboard */,
+				380DA5461BE5420100976988 /* Assets.xcassets */,
+				380DA5481BE5420100976988 /* LaunchScreen.storyboard */,
+				380DA54B1BE5420100976988 /* Info.plist */,
+				380DA5431BE5420100976988 /* MuseumApp.xcdatamodeld */,
+			);
+			path = MuseumApp;
+			sourceTree = "<group>";
+		};
+		380DA5531BE5420100976988 /* MuseumAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				380DA5541BE5420100976988 /* MuseumAppTests.swift */,
+				380DA5561BE5420100976988 /* Info.plist */,
+			);
+			path = MuseumAppTests;
+			sourceTree = "<group>";
+		};
+		380DA55E1BE5420100976988 /* MuseumAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				380DA55F1BE5420100976988 /* MuseumAppUITests.swift */,
+				380DA5611BE5420100976988 /* Info.plist */,
+			);
+			path = MuseumAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		380DA5381BE5420100976988 /* MuseumApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 380DA5641BE5420100976988 /* Build configuration list for PBXNativeTarget "MuseumApp" */;
+			buildPhases = (
+				380DA5351BE5420100976988 /* Sources */,
+				380DA5361BE5420100976988 /* Frameworks */,
+				380DA5371BE5420100976988 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MuseumApp;
+			productName = MuseumApp;
+			productReference = 380DA5391BE5420100976988 /* MuseumApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		380DA54F1BE5420100976988 /* MuseumAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 380DA5671BE5420100976988 /* Build configuration list for PBXNativeTarget "MuseumAppTests" */;
+			buildPhases = (
+				380DA54C1BE5420100976988 /* Sources */,
+				380DA54D1BE5420100976988 /* Frameworks */,
+				380DA54E1BE5420100976988 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				380DA5521BE5420100976988 /* PBXTargetDependency */,
+			);
+			name = MuseumAppTests;
+			productName = MuseumAppTests;
+			productReference = 380DA5501BE5420100976988 /* MuseumAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		380DA55A1BE5420100976988 /* MuseumAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 380DA56A1BE5420100976988 /* Build configuration list for PBXNativeTarget "MuseumAppUITests" */;
+			buildPhases = (
+				380DA5571BE5420100976988 /* Sources */,
+				380DA5581BE5420100976988 /* Frameworks */,
+				380DA5591BE5420100976988 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				380DA55D1BE5420100976988 /* PBXTargetDependency */,
+			);
+			name = MuseumAppUITests;
+			productName = MuseumAppUITests;
+			productReference = 380DA55B1BE5420100976988 /* MuseumAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		380DA5311BE5420100976988 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "James Payne";
+				TargetAttributes = {
+					380DA5381BE5420100976988 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					380DA54F1BE5420100976988 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 380DA5381BE5420100976988;
+					};
+					380DA55A1BE5420100976988 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 380DA5381BE5420100976988;
+					};
+				};
+			};
+			buildConfigurationList = 380DA5341BE5420100976988 /* Build configuration list for PBXProject "MuseumApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 380DA5301BE5420100976988;
+			productRefGroup = 380DA53A1BE5420100976988 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				380DA5381BE5420100976988 /* MuseumApp */,
+				380DA54F1BE5420100976988 /* MuseumAppTests */,
+				380DA55A1BE5420100976988 /* MuseumAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		380DA5371BE5420100976988 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				380DA54A1BE5420100976988 /* LaunchScreen.storyboard in Resources */,
+				380DA5471BE5420100976988 /* Assets.xcassets in Resources */,
+				380DA5421BE5420100976988 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		380DA54E1BE5420100976988 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		380DA5591BE5420100976988 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		380DA5351BE5420100976988 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				380DA53F1BE5420100976988 /* ViewController.swift in Sources */,
+				380DA53D1BE5420100976988 /* AppDelegate.swift in Sources */,
+				380DA5451BE5420100976988 /* MuseumApp.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		380DA54C1BE5420100976988 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				380DA5551BE5420100976988 /* MuseumAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		380DA5571BE5420100976988 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				380DA5601BE5420100976988 /* MuseumAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		380DA5521BE5420100976988 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 380DA5381BE5420100976988 /* MuseumApp */;
+			targetProxy = 380DA5511BE5420100976988 /* PBXContainerItemProxy */;
+		};
+		380DA55D1BE5420100976988 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 380DA5381BE5420100976988 /* MuseumApp */;
+			targetProxy = 380DA55C1BE5420100976988 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		380DA5401BE5420100976988 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				380DA5411BE5420100976988 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		380DA5481BE5420100976988 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				380DA5491BE5420100976988 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		380DA5621BE5420100976988 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		380DA5631BE5420100976988 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		380DA5651BE5420100976988 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MuseumApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.payne.ios.MuseumApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		380DA5661BE5420100976988 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MuseumApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.payne.ios.MuseumApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		380DA5681BE5420100976988 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MuseumAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.payne.ios.MuseumAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MuseumApp.app/MuseumApp";
+			};
+			name = Debug;
+		};
+		380DA5691BE5420100976988 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MuseumAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.payne.ios.MuseumAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MuseumApp.app/MuseumApp";
+			};
+			name = Release;
+		};
+		380DA56B1BE5420100976988 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MuseumAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.payne.ios.MuseumAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MuseumApp;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		380DA56C1BE5420100976988 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MuseumAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.payne.ios.MuseumAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MuseumApp;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		380DA5341BE5420100976988 /* Build configuration list for PBXProject "MuseumApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				380DA5621BE5420100976988 /* Debug */,
+				380DA5631BE5420100976988 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		380DA5641BE5420100976988 /* Build configuration list for PBXNativeTarget "MuseumApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				380DA5651BE5420100976988 /* Debug */,
+				380DA5661BE5420100976988 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		380DA5671BE5420100976988 /* Build configuration list for PBXNativeTarget "MuseumAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				380DA5681BE5420100976988 /* Debug */,
+				380DA5691BE5420100976988 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		380DA56A1BE5420100976988 /* Build configuration list for PBXNativeTarget "MuseumAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				380DA56B1BE5420100976988 /* Debug */,
+				380DA56C1BE5420100976988 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		380DA5431BE5420100976988 /* MuseumApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				380DA5441BE5420100976988 /* MuseumApp.xcdatamodel */,
+			);
+			currentVersion = 380DA5441BE5420100976988 /* MuseumApp.xcdatamodel */;
+			path = MuseumApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 380DA5311BE5420100976988 /* Project object */;
+}
