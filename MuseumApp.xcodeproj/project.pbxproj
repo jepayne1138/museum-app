@@ -15,6 +15,8 @@
 		380DA54A1BE5420100976988 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 380DA5481BE5420100976988 /* LaunchScreen.storyboard */; };
 		380DA5551BE5420100976988 /* MuseumAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380DA5541BE5420100976988 /* MuseumAppTests.swift */; };
 		380DA5601BE5420100976988 /* MuseumAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380DA55F1BE5420100976988 /* MuseumAppUITests.swift */; };
+		38EBEB721BE6F53900B8A05A /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EBEB711BE6F53900B8A05A /* MainTableViewController.swift */; };
+		38EBEB761BE6FB9800B8A05A /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EBEB751BE6FB9800B8A05A /* MainTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		380DA55B1BE5420100976988 /* MuseumAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseumAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		380DA55F1BE5420100976988 /* MuseumAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumAppUITests.swift; sourceTree = "<group>"; };
 		380DA5611BE5420100976988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38EBEB711BE6F53900B8A05A /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		38EBEB751BE6FB9800B8A05A /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				380DA5481BE5420100976988 /* LaunchScreen.storyboard */,
 				380DA54B1BE5420100976988 /* Info.plist */,
 				380DA5431BE5420100976988 /* MuseumApp.xcdatamodeld */,
+				38EBEB711BE6F53900B8A05A /* MainTableViewController.swift */,
+				38EBEB751BE6FB9800B8A05A /* MainTableViewCell.swift */,
 			);
 			path = MuseumApp;
 			sourceTree = "<group>";
@@ -259,9 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38EBEB721BE6F53900B8A05A /* MainTableViewController.swift in Sources */,
 				380DA53F1BE5420100976988 /* ViewController.swift in Sources */,
 				380DA53D1BE5420100976988 /* AppDelegate.swift in Sources */,
 				380DA5451BE5420100976988 /* MuseumApp.xcdatamodeld in Sources */,
+				38EBEB761BE6FB9800B8A05A /* MainTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +494,7 @@
 				380DA5661BE5420100976988 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		380DA5671BE5420100976988 /* Build configuration list for PBXNativeTarget "MuseumAppTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +503,7 @@
 				380DA5691BE5420100976988 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		380DA56A1BE5420100976988 /* Build configuration list for PBXNativeTarget "MuseumAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +512,7 @@
 				380DA56C1BE5420100976988 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
