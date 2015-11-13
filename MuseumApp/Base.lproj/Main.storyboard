@@ -7,7 +7,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Main Table View Controller-->
+        <!--Madison Science Museum-->
         <scene sceneID="NPz-lN-68r">
             <objects>
                 <tableViewController id="7Hm-4e-nbk" customClass="MainTableViewController" customModule="MuseumApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="LVc-qj-Xjw">
+                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="science_image" id="LVc-qj-Xjw">
                             <rect key="frame" x="0.0" y="64" width="600" height="342"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
@@ -55,7 +55,7 @@
                             <outlet property="delegate" destination="7Hm-4e-nbk" id="hWx-fN-HRh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="rdk-FA-5yQ"/>
+                    <navigationItem key="navigationItem" title="Madison Science Museum" id="dVn-FK-Sbu"/>
                     <connections>
                         <segue destination="szE-05-0lV" kind="show" identifier="toEventsController" id="xhl-OF-3uu"/>
                         <segue destination="Hrd-6D-fu4" kind="show" identifier="toInformationController" id="MjK-la-YCP"/>
@@ -66,7 +66,7 @@
             </objects>
             <point key="canvasLocation" x="459" y="346"/>
         </scene>
-        <!--Exhibits Table View Controller-->
+        <!--Exhibits-->
         <scene sceneID="oEt-nH-gbB">
             <objects>
                 <tableViewController id="P1q-Xk-Ztz" customClass="ExhibitsTableViewController" customModule="MuseumApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,6 +109,7 @@
                             <outlet property="delegate" destination="P1q-Xk-Ztz" id="7Ef-47-li3"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Exhibits" id="car-mX-k8d"/>
                     <connections>
                         <segue destination="JEt-U6-TBc" kind="show" identifier="toExhibitTextController" id="drB-s6-5Us"/>
                         <segue destination="M0r-et-InD" kind="show" identifier="toExhibitImageController" id="KbG-a8-2dx"/>
@@ -121,7 +122,7 @@
             </objects>
             <point key="canvasLocation" x="1310" y="-368"/>
         </scene>
-        <!--View Controller-->
+        <!--TextViewController-->
         <scene sceneID="dwx-Fk-I62">
             <objects>
                 <viewController id="JEt-U6-TBc" sceneMemberID="viewController">
@@ -151,12 +152,13 @@
                             <constraint firstItem="kme-Bz-do1" firstAttribute="leading" secondItem="RJs-sv-H1y" secondAttribute="leadingMargin" id="l8q-8C-3Ya"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="TextViewController" id="8HO-6J-dxz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fso-fC-fyL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2143" y="-966"/>
         </scene>
-        <!--View Controller-->
+        <!--ImageViewController-->
         <scene sceneID="xiR-ez-FXe">
             <objects>
                 <viewController id="M0r-et-InD" sceneMemberID="viewController">
@@ -177,6 +179,9 @@
                                 <variation key="heightClass=compact" ambiguous="YES">
                                     <rect key="frame" x="20" y="72" width="454" height="328"/>
                                 </variation>
+                                <variation key="widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="20" y="72" width="730" height="528"/>
+                                </variation>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="paB-V0-sei">
                                 <rect key="frame" x="20" y="477" width="560" height="123"/>
@@ -187,6 +192,9 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=compact" ambiguous="YES">
                                     <rect key="frame" x="20" y="400" width="560" height="0.0"/>
+                                </variation>
+                                <variation key="widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="20" y="600" width="760" height="0.0"/>
                                 </variation>
                             </textView>
                         </subviews>
@@ -202,12 +210,13 @@
                             <constraint firstItem="paB-V0-sei" firstAttribute="top" secondItem="d7p-cH-yv7" secondAttribute="bottom" id="qGW-Aq-aGO"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="ImageViewController" id="B9a-MV-Txc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qxu-hA-6nJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2143" y="-290"/>
         </scene>
-        <!--View Controller-->
+        <!--VideoViewController-->
         <scene sceneID="dgP-I4-i8V">
             <objects>
                 <viewController id="Ap5-qr-kUl" sceneMemberID="viewController">
@@ -221,12 +230,13 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="VideoViewController" id="ztb-wr-fKZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VHG-k8-enJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2917" y="-966"/>
         </scene>
-        <!--View Controller-->
+        <!--AudioViewController-->
         <scene sceneID="EUm-jJ-Bj9">
             <objects>
                 <viewController id="MK1-dc-LUj" sceneMemberID="viewController">
@@ -240,12 +250,13 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="AudioViewController" id="zQb-rc-hQ2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfu-FI-lAy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2917" y="-290"/>
         </scene>
-        <!--View Controller-->
+        <!--WebViewController-->
         <scene sceneID="BAz-Sf-LCo">
             <objects>
                 <viewController id="uoI-6I-QCE" sceneMemberID="viewController">
@@ -272,12 +283,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="mpr-jR-Dtm" secondAttribute="trailing" id="UWb-Yv-GiS"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="WebViewController" id="p5d-1A-zrX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zC0-8W-rCi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3597" y="-966"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Events-->
         <scene sceneID="QTa-4K-sVb">
             <objects>
                 <tableViewController id="szE-05-0lV" sceneMemberID="viewController">
@@ -317,12 +329,13 @@
                             <outlet property="delegate" destination="szE-05-0lV" id="Qfv-Bd-AkR"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Events" id="beU-hA-5Ma"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4el-rk-hqq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1310" y="346"/>
         </scene>
-        <!--View Controller-->
+        <!--Information-->
         <scene sceneID="kpF-fu-TXe">
             <objects>
                 <viewController id="Hrd-6D-fu4" sceneMemberID="viewController">
@@ -352,6 +365,7 @@
                             <constraint firstItem="5Ex-Sg-OUb" firstAttribute="top" secondItem="Mdt-t1-229" secondAttribute="bottom" id="yqY-Ii-rUj"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Information" id="hni-aa-sWr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ix-US-elV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -377,4 +391,7 @@
             <point key="canvasLocation" x="-353" y="346"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="science_image" width="705" height="435"/>
+    </resources>
 </document>
