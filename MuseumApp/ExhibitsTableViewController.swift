@@ -56,18 +56,7 @@ class ExhibitsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var segueID = ""
-        var valid = true
-        
-        switch (exhibits![indexPath.row].viewController) {
-        case "TextViewController":
-            segueID = "toExhibitTextController"
-        default:
-            valid = false
-        }
-        if (valid) {
-            self.performSegueWithIdentifier(segueID, sender: tableView)
-        }
+        self.performSegueWithIdentifier(exhibits![indexPath.row].viewController!.segueID, sender: tableView)
     }
 
     /*
@@ -115,14 +104,16 @@ class ExhibitsTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let destView = segue.destinationViewController as? ExhibitViewControllerBase
+        if let indexPath = self.tableView.indexPathForSelectedRow {
+            destView?.exhibit = exhibits![indexPath.row]
+        }
     }
-    */
 
 }

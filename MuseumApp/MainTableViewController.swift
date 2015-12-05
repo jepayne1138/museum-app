@@ -32,10 +32,14 @@ class MainTableViewController: UITableViewController {
         
         let emptyResource = Resource()
         
+        let textViewController = ViewControllerData(value: ["viewControllerID": 0, "name" : "TextViewController", "segueID": "toExhibitTextController"])
+        let imageViewController = ViewControllerData(value: ["viewControllerID": 1, "name" : "ImageViewController", "segueID": "toExhibitImageController"])
+        
         let testExhibit = Exhibit()
         testExhibit.name = "Test Exhibit"
         testExhibit.exibitSections = testSection
-        testExhibit.viewController = "TextViewController"
+        testExhibit.viewController = textViewController
+        testExhibit.title = "Exhibit 1"
         testExhibit.text = "Example text goes here"
         testExhibit.resource = emptyResource
         
@@ -47,8 +51,17 @@ class MainTableViewController: UITableViewController {
         
         // Add to the Realm inside a transaction
         try! realm.write {
+            // Add sections
             realm.add(testSection)
+            
+            // Add resources
             realm.add(emptyResource)
+            
+            // Add view controllers
+            realm.add(textViewController)
+            realm.add(imageViewController)
+            
+            // Add exhibits
             realm.add(testExhibit)
         }
         // */
