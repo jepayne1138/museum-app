@@ -26,7 +26,7 @@ class MainTableViewController: UITableViewController {
         super.viewDidLoad()
 
 
-        /* Sample Realm Data (add / to begining to use)
+        //* Sample Realm Data (add / to begining to use)
         let testSection = ExhibitSection()
         testSection.name = "Test Section"
         
@@ -35,10 +35,14 @@ class MainTableViewController: UITableViewController {
         let testExhibit = Exhibit()
         testExhibit.name = "Test Exhibit"
         testExhibit.exibitSections = testSection
-        testExhibit.viewController = "textViewController"
+        testExhibit.viewController = "TextViewController"
         testExhibit.text = "Example text goes here"
         testExhibit.resource = emptyResource
         
+        // Purge the realm file for testing purposes
+        try! NSFileManager.defaultManager().removeItemAtPath(Realm.Configuration.defaultConfiguration.path!)
+        
+        // Get a new Realm instance
         let realm = try! Realm()
         
         // Add to the Realm inside a transaction

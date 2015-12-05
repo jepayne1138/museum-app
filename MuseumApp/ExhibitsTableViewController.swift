@@ -7,19 +7,27 @@
 //
 
 import UIKit
+import RealmSwift
+
+struct InvalidViewController: ErrorType {}
 
 class ExhibitsTableViewController: UITableViewController {
+
+    let realm = try! Realm()
 
     struct ExhibitInfo {
         var name: String
         var segueID: String
     }
     
-    var exhibits: [ExhibitInfo] = []
+//    var exhibits: [ExhibitInfo] = []
+    var exhibits: Results<Exhibit>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        exhibits = realm.objects(Exhibit)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -34,21 +42,32 @@ class ExhibitsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return exhibits.count
+        return exhibits!.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("exhibitTableCell", forIndexPath: indexPath) as! ExhibitsTableViewCell
         
         // Configure the cell...
-        cell.exhibitNameLabel.text = exhibits[indexPath.row].name
+        cell.exhibitNameLabel.text = exhibits![indexPath.row].name
         
         
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier(exhibits[indexPath.row].segueID, sender: tableView)
+        var segueID = ""
+        var valid = true
+        
+        switch (exhibits![indexPath.row].viewController) {
+        case "TextViewController":
+            segueID = "toExhibitTextController"
+        default:
+            valid = false
+        }
+        if (valid) {
+            self.performSegueWithIdentifier(segueID, sender: tableView)
+        }
     }
 
     /*

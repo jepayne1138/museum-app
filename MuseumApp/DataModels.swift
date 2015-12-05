@@ -17,9 +17,9 @@ class Exhibit: Object {
     dynamic var text = ""
     dynamic var resource: Resource?
     
-//    override static func primaryKey() -> Int? {
-//        return "exhibitID"
-//    }
+    override static func primaryKey() -> String? {
+        return "exhibitID"
+    }
 }
 
 class ExhibitSection: Object {
@@ -27,17 +27,16 @@ class ExhibitSection: Object {
     dynamic var name = ""
     let exhibits = List<Exhibit>()
     
-//    override static func primaryKey() -> Int? {
-//        return "exhibitSectionID"
-//    }
+    override static func primaryKey() -> String? {
+        return "exhibitSectionID"
+    }
 }
 
 class Resource: Object {
     dynamic var resourceID = 0
     dynamic var url = ""
     
-//    override static func primaryKey() -> Int? {
-//        return "resourceID"
-//    }
-
+    override static func primaryKey() -> String? {
+        return "resourceID"
+    }
 }
