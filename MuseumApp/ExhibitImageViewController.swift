@@ -1,5 +1,5 @@
 //
-//  ExhibitTextViewController.swift
+//  ExhibitImageViewController.swift
 //  MuseumApp
 //
 //  Created by James Payne on 12/5/15.
@@ -8,16 +8,12 @@
 
 import UIKit
 
-class ExhibitTextViewController: ExhibitViewControllerBase {
+class ExhibitImageViewController: ExhibitViewControllerBase {
 
-    @IBOutlet weak var contentTextView: UITextView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.automaticallyAdjustsScrollViewInsets = false
-        
-        self.contentTextView.text = self.exhibit!.text
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
