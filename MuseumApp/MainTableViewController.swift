@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MainTableViewController: UITableViewController {
 
@@ -24,6 +25,31 @@ class MainTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
+        /* Sample Realm Data (add / to begining to use)
+        let testSection = ExhibitSection()
+        testSection.name = "Test Section"
+        
+        let emptyResource = Resource()
+        
+        let testExhibit = Exhibit()
+        testExhibit.name = "Test Exhibit"
+        testExhibit.exibitSections = testSection
+        testExhibit.viewController = "textViewController"
+        testExhibit.text = "Example text goes here"
+        testExhibit.resource = emptyResource
+        
+        let realm = try! Realm()
+        
+        // Add to the Realm inside a transaction
+        try! realm.write {
+            realm.add(testSection)
+            realm.add(emptyResource)
+            realm.add(testExhibit)
+        }
+        // */
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
