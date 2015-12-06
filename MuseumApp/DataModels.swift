@@ -19,6 +19,10 @@ class Exhibit: Object {
     dynamic var resource: Resource?
     dynamic var revision = 0;
     
+    var exhibitSections: [ExhibitSection] {
+        return linkingObjects(ExhibitSection.self, forProperty: "exhibits")
+    }
+    
     override static func primaryKey() -> String? {
         return "exhibitID"
     }

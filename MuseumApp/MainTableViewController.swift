@@ -27,8 +27,8 @@ class MainTableViewController: UITableViewController {
 
 
         //* Sample Realm Data (add / to begining to use)
-        let testSection = ExhibitSection()
-        testSection.name = "Test Section"
+        let section1 = ExhibitSection(value: ["exhibitSectionID": 0, "name": "Section 1"])
+        let section2 = ExhibitSection(value: ["exhibitSectionID": 1, "name": "Section 2"])
         
         let emptyResource = Resource()
         
@@ -37,14 +37,29 @@ class MainTableViewController: UITableViewController {
         
         let testExhibit = Exhibit()
         testExhibit.name = "Test Exhibit"
-        testExhibit.exibitSections = testSection
         testExhibit.viewController = textViewController
         testExhibit.title = "Exhibit 1"
         testExhibit.text = "Example text goes here"
         testExhibit.resource = emptyResource
         
+        let testExhibit2 = Exhibit()
+        testExhibit2.exhibitID = 1
+        testExhibit2.name = "Test Exhibit 2"
+        testExhibit2.viewController = textViewController
+        testExhibit2.title = "Exhibit 2"
+        testExhibit2.text = "Exhibit 2 text goes here"
+        testExhibit2.resource = emptyResource
+
+        
+        section1.exhibits.append(testExhibit)
+        section2.exhibits.append(testExhibit2)
+        
         // Purge the realm file for testing purposes
-        try! NSFileManager.defaultManager().removeItemAtPath(Realm.Configuration.defaultConfiguration.path!)
+        do {
+            try NSFileManager.defaultManager().removeItemAtPath(Realm.Configuration.defaultConfiguration.path!)
+        } catch {
+            // Pass
+        }
         
         // Get a new Realm instance
         let realm = try! Realm()
@@ -52,7 +67,8 @@ class MainTableViewController: UITableViewController {
         // Add to the Realm inside a transaction
         try! realm.write {
             // Add sections
-            realm.add(testSection)
+            realm.add(section1)
+            realm.add(section2)
             
             // Add resources
             realm.add(emptyResource)
@@ -63,6 +79,7 @@ class MainTableViewController: UITableViewController {
             
             // Add exhibits
             realm.add(testExhibit)
+            realm.add(testExhibit2)
         }
         // */
         

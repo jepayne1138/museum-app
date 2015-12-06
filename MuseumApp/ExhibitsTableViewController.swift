@@ -14,18 +14,13 @@ struct InvalidViewController: ErrorType {}
 class ExhibitsTableViewController: UITableViewController {
 
     let realm = try! Realm()
-
-    struct ExhibitInfo {
-        var name: String
-        var segueID: String
-    }
-    
-//    var exhibits: [ExhibitInfo] = []
+    var exhibitSections: Results<ExhibitSection>?
     var exhibits: Results<Exhibit>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        exhibitSections = realm.objects(ExhibitSection)
         exhibits = realm.objects(Exhibit)
         
         // Uncomment the following line to preserve selection between presentations
@@ -37,28 +32,34 @@ class ExhibitsTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return exhibitSections!.count
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return exhibits!.count
+        return exhibitSections![section].exhibits.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("exhibitTableCell", forIndexPath: indexPath) as! ExhibitsTableViewCell
         
-        // Configure the cell...
-        cell.exhibitNameLabel.text = exhibits![indexPath.row].name
+        let exhibit = exhibitSections![indexPath.section].exhibits[indexPath.row]
         
+        // Configure the cell...
+        cell.exhibitNameLabel.text = exhibit.name
         
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier(exhibits![indexPath.row].viewController!.segueID, sender: tableView)
+        let exhibit = exhibitSections![indexPath.section].exhibits[indexPath.row]
+        self.performSegueWithIdentifier(exhibit.viewController!.segueID, sender: tableView)
     }
 
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return exhibitSections![section].name
+    }
+    
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
@@ -111,8 +112,9 @@ class ExhibitsTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         let destView = segue.destinationViewController as? ExhibitViewControllerBase
+
         if let indexPath = self.tableView.indexPathForSelectedRow {
-            destView?.exhibit = exhibits![indexPath.row]
+            destView?.exhibit = exhibitSections![indexPath.section].exhibits[indexPath.row]
         }
     }
 

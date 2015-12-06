@@ -17,6 +17,11 @@ class ExhibitTextViewController: ExhibitViewControllerBase {
 
         self.automaticallyAdjustsScrollViewInsets = false
         
+        // Set font size
+        self.contentTextView.selectable = true
+        self.contentTextView.font = UIFont(name: "Helvetica Neue", size: 18)
+        self.contentTextView.selectable = false
+
         self.contentTextView.text = self.exhibit!.text
     }
 
