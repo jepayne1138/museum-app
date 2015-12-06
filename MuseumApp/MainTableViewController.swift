@@ -54,6 +54,12 @@ class MainTableViewController: UITableViewController {
         section1.exhibits.append(testExhibit)
         section2.exhibits.append(testExhibit2)
         
+        // Events
+        let event1 = Event()
+        event1.eventID = 0
+        event1.name = "Event 1"
+        event1.content = "Description goes here"
+        
         // Purge the realm file for testing purposes
         do {
             try NSFileManager.defaultManager().removeItemAtPath(Realm.Configuration.defaultConfiguration.path!)
@@ -80,6 +86,9 @@ class MainTableViewController: UITableViewController {
             // Add exhibits
             realm.add(testExhibit)
             realm.add(testExhibit2)
+            
+            // Add events
+            realm.add(event1)
         }
         // */
         

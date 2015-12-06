@@ -1,17 +1,21 @@
 //
-//  ExhibitsTableViewCell.swift
+//  EventsTableViewCell.swift
 //  MuseumApp
 //
-//  Created by James Payne on 11/6/15.
+//  Created by James Payne on 12/6/15.
 //  Copyright © 2015 James Payne. All rights reserved.
 //
 
 import UIKit
 
-class ExhibitsTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var exhibitNameLabel: UILabel!
-    
+class EventsTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var eventNameLabel: UILabel!
+    @IBOutlet weak var contentTextView: UITextView!
+    @IBOutlet weak var startTimeLabel: UILabel!
+    @IBOutlet weak var endTimeLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

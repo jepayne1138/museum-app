@@ -24,6 +24,8 @@
 		38728FA81C13A58F00007ACE /* ExhibitVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38728FA71C13A58F00007ACE /* ExhibitVideoViewController.swift */; };
 		38728FAA1C13A5A600007ACE /* ExhibitAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38728FA91C13A5A600007ACE /* ExhibitAudioViewController.swift */; };
 		38728FAC1C13A5C300007ACE /* ExhibitWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38728FAB1C13A5C300007ACE /* ExhibitWebViewController.swift */; };
+		38728FAE1C14CA5D00007ACE /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38728FAD1C14CA5D00007ACE /* EventsTableViewController.swift */; };
+		38728FB21C14D8AF00007ACE /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38728FB11C14D8AF00007ACE /* EventsTableViewCell.swift */; };
 		38DD27421C1382B300470A11 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD27411C1382B300470A11 /* DataModels.swift */; };
 		38DD27431C13830200470A11 /* ExhibitsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382177711BEDBCEF00DF782A /* ExhibitsTableViewController.swift */; };
 		38EBEB721BE6F53900B8A05A /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EBEB711BE6F53900B8A05A /* MainTableViewController.swift */; };
@@ -71,6 +73,8 @@
 		38728FA71C13A58F00007ACE /* ExhibitVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExhibitVideoViewController.swift; sourceTree = "<group>"; };
 		38728FA91C13A5A600007ACE /* ExhibitAudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExhibitAudioViewController.swift; sourceTree = "<group>"; };
 		38728FAB1C13A5C300007ACE /* ExhibitWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExhibitWebViewController.swift; sourceTree = "<group>"; };
+		38728FAD1C14CA5D00007ACE /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
+		38728FB11C14D8AF00007ACE /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		38DD27411C1382B300470A11 /* DataModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		38EBEB711BE6F53900B8A05A /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		38EBEB751BE6FB9800B8A05A /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 				38EBEB751BE6FB9800B8A05A /* MainTableViewCell.swift */,
 				382177711BEDBCEF00DF782A /* ExhibitsTableViewController.swift */,
 				3821776F1BEDBCC900DF782A /* ExhibitsTableViewCell.swift */,
+				38728FAD1C14CA5D00007ACE /* EventsTableViewController.swift */,
+				38728FB11C14D8AF00007ACE /* EventsTableViewCell.swift */,
 				38115B4A1BF6396A00CCCE6D /* Media.xcassets */,
 				38728FA11C139CB700007ACE /* ExhibitViewControllerBase.swift */,
 				38728FA31C139D6100007ACE /* ExhibitTextViewController.swift */,
@@ -379,9 +385,11 @@
 				38DD27421C1382B300470A11 /* DataModels.swift in Sources */,
 				38728FA61C13A57800007ACE /* ExhibitImageViewController.swift in Sources */,
 				38728FAC1C13A5C300007ACE /* ExhibitWebViewController.swift in Sources */,
+				38728FAE1C14CA5D00007ACE /* EventsTableViewController.swift in Sources */,
 				382177701BEDBCC900DF782A /* ExhibitsTableViewCell.swift in Sources */,
 				38728FA21C139CB700007ACE /* ExhibitViewControllerBase.swift in Sources */,
 				380DA53F1BE5420100976988 /* ViewController.swift in Sources */,
+				38728FB21C14D8AF00007ACE /* EventsTableViewCell.swift in Sources */,
 				380DA53D1BE5420100976988 /* AppDelegate.swift in Sources */,
 				380DA5451BE5420100976988 /* MuseumApp.xcdatamodeld in Sources */,
 				38EBEB761BE6FB9800B8A05A /* MainTableViewCell.swift in Sources */,
