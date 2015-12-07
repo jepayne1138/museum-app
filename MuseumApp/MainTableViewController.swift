@@ -8,6 +8,60 @@
 
 import UIKit
 import RealmSwift
+import Alamofire
+import SwiftyJSON
+
+func handleUpdateJSON(json: NSDictionary) {
+    // New realm as this is called asyncronously in an Alamofire response handling closure
+    let realm = try! Realm()
+
+    // Create/update non-dependant realm objects, so that dependants will have access to updated data
+    try! realm.write {
+        // Update ViewControllerDate, ExhibitSection, and Resource as these are non-dependant
+        if let values = json["view_controllers"] as? [NSDictionary] {
+            for value in values {
+                realm.create(ViewControllerData.self, value: value, update: true)
+            }
+        }
+        if let values = json["exhibit_sections"] as? [NSDictionary] {
+            for value in values {
+                realm.create(ExhibitSection.self, value: value, update: true)
+            }
+        }
+        if let values = json["resources"] as? [NSDictionary] {
+            for value in values {
+                realm.create(Resource.self, value: value, update: true)
+            }
+        }
+//    }
+    
+    // Query non-dependant realm objects so we can update the dependants
+//    let viewControllers = realm.objects(ViewControllerData).sorted("viewControllerID")
+//    let exhibitSections = realm.objects(ExhibitSection).sorted("exhibitSectionID")
+//    let resources = realm.objects(Resource).sorted("resourceID")
+    
+    // Create/update dependant realm objects and update any dependancies with our updated non-dependant objects
+//    try! realm.write {
+        if let values = json["exhibits"] as? [NSDictionary] {
+            for value in values {
+                let object = realm.create(Exhibit.self, value: value, update: true)
+                // Get the exhibit section object and add the object to the exhibits list
+                realm.objectForPrimaryKey(ExhibitSection.self, key: object.exhibitSectionID)!.exhibits.append(object)
+                // Add the ViewControllerData object
+                object.viewController = realm.objectForPrimaryKey(ViewControllerData.self, key: object.viewControllerID)
+                // Add the Resource object
+                object.resource = realm.objectForPrimaryKey(Resource.self, key: object.resourceID)
+            }
+        }
+        if let values = json["events"] as? [NSDictionary] {
+            for value in values {
+                let object = realm.create(Event.self, value: value, update: true)
+                // Add the Resource object
+                object.resource = realm.objectForPrimaryKey(Resource.self, key: object.resourceID)
+            }
+        }
+    }
+}
 
 class MainTableViewController: UITableViewController {
 
@@ -25,6 +79,35 @@ class MainTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //* Set up the realm
+        // Purge the realm file for testing purposes
+        do {
+            print(Realm.Configuration.defaultConfiguration.path!)
+            try NSFileManager.defaultManager().removeItemAtPath(Realm.Configuration.defaultConfiguration.path!)
+        } catch {
+            // Pass
+        }
+        
+        // Get a new Realm instance
+        let realm = try! Realm()
+        // */
+
+        
+        //* Test Alamofire code for updating the app
+//        let URL = "http://localhost:5000/update?revision=-1"
+        let URL = "http://localhost:5000/viewcontrollers"
+        Alamofire.request(.GET, URL).responseJSON() {
+            response in
+            switch response.result {
+            case .Success(let data):
+                let json = data as! NSDictionary
+                handleUpdateJSON(json)
+            case .Failure(let error):
+                print("Request failed with error: \(error)")
+            }
+        }
+        // */
+        
 
         //* Sample Realm Data (add / to begining to use)
         let section1 = ExhibitSection(value: ["exhibitSectionID": 0, "name": "Section 1"])
@@ -32,10 +115,11 @@ class MainTableViewController: UITableViewController {
         
         let emptyResource = Resource()
         
-        let textViewController = ViewControllerData(value: ["viewControllerID": 0, "name" : "TextViewController", "segueID": "toExhibitTextController"])
-        let imageViewController = ViewControllerData(value: ["viewControllerID": 1, "name" : "ImageViewController", "segueID": "toExhibitImageController"])
+        let textViewController = ViewControllerData(value: ["viewControllerID": 1, "name" : "TextViewController", "segueID": "toExhibitTextController"])
+        let imageViewController = ViewControllerData(value: ["viewControllerID": 2, "name" : "ImageViewController", "segueID": "toExhibitImageController"])
         
         let testExhibit = Exhibit()
+        testExhibit.exhibitID = 2
         testExhibit.name = "Test Exhibit"
         testExhibit.viewController = textViewController
         testExhibit.title = "Exhibit 1"
@@ -43,7 +127,7 @@ class MainTableViewController: UITableViewController {
         testExhibit.resource = emptyResource
         
         let testExhibit2 = Exhibit()
-        testExhibit2.exhibitID = 1
+        testExhibit2.exhibitID = 3
         testExhibit2.name = "Test Exhibit 2"
         testExhibit2.viewController = textViewController
         testExhibit2.title = "Exhibit 2"
@@ -59,16 +143,6 @@ class MainTableViewController: UITableViewController {
         event1.eventID = 0
         event1.name = "Event 1"
         event1.content = "Description goes here"
-        
-        // Purge the realm file for testing purposes
-        do {
-            try NSFileManager.defaultManager().removeItemAtPath(Realm.Configuration.defaultConfiguration.path!)
-        } catch {
-            // Pass
-        }
-        
-        // Get a new Realm instance
-        let realm = try! Realm()
         
         // Add to the Realm inside a transaction
         try! realm.write {

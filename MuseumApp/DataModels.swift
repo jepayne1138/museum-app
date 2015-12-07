@@ -12,10 +12,13 @@ import RealmSwift
 class Exhibit: Object {
     dynamic var exhibitID = 0
     dynamic var name = ""
-    dynamic var exibitSections: ExhibitSection?
+    dynamic var exhibitSectionID = 0
+    dynamic var exibitSection: ExhibitSection?
+    dynamic var viewControllerID = 0
     dynamic var viewController: ViewControllerData?
     dynamic var title = ""
     dynamic var text = ""
+    dynamic var resourceID = 0
     dynamic var resource: Resource?
     dynamic var revision = 0;
     
@@ -64,6 +67,7 @@ class Event: Object {
     dynamic var eventID = 0
     dynamic var name = ""
     dynamic var content = ""
+    dynamic var resourceID = 0
     dynamic var resource: Resource?
     dynamic var startTime = NSDate()
     dynamic var endTime = NSDate()
