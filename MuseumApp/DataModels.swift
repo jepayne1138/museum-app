@@ -71,7 +71,6 @@ class Event: Object {
     dynamic var resource: Resource?
     dynamic var startTime = NSDate()
     dynamic var endTime = NSDate()
-    dynamic var date = NSDate()
     dynamic var revision = 0;
 
     override static func primaryKey() -> String? {

@@ -60,7 +60,7 @@ class EventsTableViewController: UITableViewController {
         cell.contentTextView.text = event.content
         cell.startTimeLabel.text = timeFormat.stringFromDate(event.startTime)
         cell.endTimeLabel.text = timeFormat.stringFromDate(event.endTime)
-        cell.dateLabel.text = dateFormat.stringFromDate(event.date)
+        cell.dateLabel.text = dateFormat.stringFromDate(event.startTime)
 
         return cell
     }
