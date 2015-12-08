@@ -70,6 +70,7 @@ class MainTableViewController: UITableViewController {
         var segueID: String
     }
     
+    var baseURL: String?
     var navigation = [
         SegueInfo(name: "Information", segueID: "toInformationController"),
         SegueInfo(name: "Exhibits", segueID: "toExhibitsController"),
@@ -78,7 +79,10 @@ class MainTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if let path = NSBundle.mainBundle().pathForResource("Info", ofType: "plist"), dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
+            baseURL = dict["com.payne.ios.baseurl"] as? String
+        }
         //* Set up the realm
         // Purge the realm file for testing purposes
         do {
@@ -95,7 +99,8 @@ class MainTableViewController: UITableViewController {
         
         //* Test Alamofire code for updating the app
 //        let URL = "http://localhost:5000/update?revision=-1"
-        let URL = "http://localhost:5000/viewcontrollers"
+        let URL = "\(baseURL!)viewcontrollers"
+        print(URL)
         Alamofire.request(.GET, URL).responseJSON() {
             response in
             switch response.result {

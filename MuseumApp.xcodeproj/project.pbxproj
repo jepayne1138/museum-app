@@ -75,6 +75,7 @@
 		38728FAB1C13A5C300007ACE /* ExhibitWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExhibitWebViewController.swift; sourceTree = "<group>"; };
 		38728FAD1C14CA5D00007ACE /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		38728FB11C14D8AF00007ACE /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		38B181731C1686DA009A58B1 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		38DD27411C1382B300470A11 /* DataModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		38EBEB711BE6F53900B8A05A /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		38EBEB751BE6FB9800B8A05A /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
@@ -155,6 +156,7 @@
 				38728FA71C13A58F00007ACE /* ExhibitVideoViewController.swift */,
 				38728FA91C13A5A600007ACE /* ExhibitAudioViewController.swift */,
 				38728FAB1C13A5C300007ACE /* ExhibitWebViewController.swift */,
+				38B181731C1686DA009A58B1 /* Config.xcconfig */,
 			);
 			path = MuseumApp;
 			sourceTree = "<group>";
@@ -449,6 +451,7 @@
 /* Begin XCBuildConfiguration section */
 		380DA5621BE5420100976988 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38B181731C1686DA009A58B1 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -493,6 +496,7 @@
 		};
 		380DA5631BE5420100976988 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38B181731C1686DA009A58B1 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

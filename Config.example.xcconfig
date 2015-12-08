@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  MuseumApp
+//
+//  Created by James Payne on 12/7/15.
+//  Copyright © 2015 James Payne. All rights reserved.
+//
+
+//include "Pods/Target Support Files/Pods/Pods.debug.xcconfig"
+PROTOCOL = https
+BASEURL  = SERVER_URL_HERE
