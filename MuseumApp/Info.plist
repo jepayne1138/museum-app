@@ -37,21 +37,11 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>com.payne.ios.baseurl</key>
-	<string>$(PROTOCOL)://$(BASEURL)</string>
+	<string>$(PROTOCOL)://$(BASEURL):$(PORT)/</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>localhost</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-				<key>NSExceptionRequiresForwardSecrecy</key>
-				<false/>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-			</dict>
-		</dict>
-	</dict>
+		<key>NSAllowsArbitraryLoads</key>
+        <true/>
+    </dict>
 </dict>
 </plist>
