@@ -14,7 +14,12 @@ import SwiftyJSON
 func handleUpdateJSON(json: NSDictionary) {
     // New realm as this is called asyncronously in an Alamofire response handling closure
     let realm = try! Realm()
-
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
+    
+//    print(json)
+    
     // Create/update non-dependant realm objects, so that dependants will have access to updated data
     try! realm.write {
         // Update ViewControllerDate, ExhibitSection, and Resource as these are non-dependant
@@ -33,15 +38,8 @@ func handleUpdateJSON(json: NSDictionary) {
                 realm.create(Resource.self, value: value, update: true)
             }
         }
-//    }
-    
-    // Query non-dependant realm objects so we can update the dependants
-//    let viewControllers = realm.objects(ViewControllerData).sorted("viewControllerID")
-//    let exhibitSections = realm.objects(ExhibitSection).sorted("exhibitSectionID")
-//    let resources = realm.objects(Resource).sorted("resourceID")
     
     // Create/update dependant realm objects and update any dependancies with our updated non-dependant objects
-//    try! realm.write {
         if let values = json["exhibits"] as? [NSDictionary] {
             for value in values {
                 let object = realm.create(Exhibit.self, value: value, update: true)
@@ -54,7 +52,8 @@ func handleUpdateJSON(json: NSDictionary) {
             }
         }
         if let values = json["events"] as? [NSDictionary] {
-            for value in values {
+            for i in values.indices {
+                var value = values[i].copy()
                 let object = realm.create(Event.self, value: value, update: true)
                 // Add the Resource object
                 object.resource = realm.objectForPrimaryKey(Resource.self, key: object.resourceID)
@@ -91,15 +90,20 @@ class MainTableViewController: UITableViewController {
         } catch {
             // Pass
         }
-        
-        // Get a new Realm instance
-        let realm = try! Realm()
         // */
 
+        // Get a new Realm instance
+        let realm = try! Realm()
+        if (realm.objectForPrimaryKey(Metadata.self, key: 0) == nil) {
+            // Create a new metadata instance
+            try! realm.write {
+                realm.create(Metadata.self, value: ["revision": 0], update: true)
+            }
+        }
+        let metadata = realm.objectForPrimaryKey(Metadata.self, key: 0)
         
         //* Test Alamofire code for updating the app
-//        let URL = "http://localhost:5000/update?revision=-1"
-        let URL = "\(baseURL!)viewcontrollers"
+        let URL = "\(baseURL!)update?revision=\(metadata!.revision)"
         print(URL)
         Alamofire.request(.GET, URL).responseJSON() {
             response in
@@ -114,7 +118,7 @@ class MainTableViewController: UITableViewController {
         // */
         
 
-        //* Sample Realm Data (add / to begining to use)
+        /* Sample Realm Data (add / to begining to use)
         let section1 = ExhibitSection(value: ["exhibitSectionID": 0, "name": "Section 1"])
         let section2 = ExhibitSection(value: ["exhibitSectionID": 1, "name": "Section 2"])
         

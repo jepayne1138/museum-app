@@ -77,3 +77,12 @@ class Event: Object {
         return "eventID"
     }
 }
+
+class Metadata: Object {
+    dynamic var metadataID = 0
+    dynamic var revision = 0
+
+    override static func primaryKey() -> String? {
+        return "metadataID"
+    }
+}

@@ -9,3 +9,4 @@
 //include "Pods/Target Support Files/Pods/Pods.debug.xcconfig"
 PROTOCOL = https
 BASEURL  = SERVER_URL_HERE
+PORT     = PORT_HERE
