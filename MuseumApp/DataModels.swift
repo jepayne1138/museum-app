@@ -12,6 +12,10 @@ import ObjectMapper
 
 class ISO8601Transform: TransformType {
     
+    // TODO:  Add formatters to account for optional variations in ISO 8601 encoding
+    //        and take the likely just take the first non-nil value
+    // For now I belive this format works with the current API as long as no milliseconds
+    
     typealias Object = NSDate
     typealias JSON = String
     
@@ -19,7 +23,7 @@ class ISO8601Transform: TransformType {
 
     init() {
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
     }
     
     func transformFromJSON(value: AnyObject?) -> Object? {
@@ -36,17 +40,13 @@ class Exhibit: Object, Mappable {
     dynamic var exhibitID = 0
     dynamic var name = ""
     dynamic var exhibitSectionID = 0
-    dynamic var exibitSection: ExhibitSection?
+    dynamic var exhibitSection: ExhibitSection?
     dynamic var viewControllerID = 0
     dynamic var viewController: ViewControllerData?
     dynamic var text = ""
     dynamic var resourceID = 0
     dynamic var resource: Resource?
     dynamic var revision = 0
-
-    var exhibitSections: [ExhibitSection] {
-        return linkingObjects(ExhibitSection.self, forProperty: "exhibits")
-    }
 
     required convenience init?(_ map: Map) {
         self.init()
@@ -70,9 +70,12 @@ class Exhibit: Object, Mappable {
 class ExhibitSection: Object, Mappable {
     dynamic var exhibitSectionID = 0
     dynamic var name = ""
-    let exhibits = List<Exhibit>()
     dynamic var revision = 0
 
+    var exhibits: [Exhibit] {
+        return linkingObjects(Exhibit.self, forProperty: "exhibitSection")
+    }
+    
     required convenience init?(_ map: Map) {
         self.init()
     }
@@ -147,7 +150,7 @@ class Event: Object, Mappable {
     func mapping(map: Map) {
         eventID <- map["eventID"]
         name <- map["name"]
-        content <- map["content"]
+        content <- map["description"]
         resourceID <- map["resourceID"]
         startTime <- (map["startTime"], ISO8601Transform())
         endTime <- (map["endTime"], ISO8601Transform())

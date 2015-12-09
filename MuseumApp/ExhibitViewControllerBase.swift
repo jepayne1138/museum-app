@@ -16,7 +16,7 @@ class ExhibitViewControllerBase: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = exhibit!.title
+        self.navigationItem.title = exhibit!.name
     }
 
     override func didReceiveMemoryWarning() {
