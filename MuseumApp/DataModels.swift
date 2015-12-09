@@ -8,62 +8,129 @@
 
 import Foundation
 import RealmSwift
+import ObjectMapper
 
-class Exhibit: Object {
+class ISO8601Transform: TransformType {
+    
+    typealias Object = NSDate
+    typealias JSON = String
+    
+    let dateFormatter = NSDateFormatter()
+
+    init() {
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
+    }
+    
+    func transformFromJSON(value: AnyObject?) -> Object? {
+        return dateFormatter.dateFromString(value as! String)
+    }
+
+    func transformToJSON(value: Object?) -> JSON? {
+        return dateFormatter.stringFromDate(value!)
+    }
+
+}
+
+class Exhibit: Object, Mappable {
     dynamic var exhibitID = 0
     dynamic var name = ""
     dynamic var exhibitSectionID = 0
     dynamic var exibitSection: ExhibitSection?
     dynamic var viewControllerID = 0
     dynamic var viewController: ViewControllerData?
-    dynamic var title = ""
     dynamic var text = ""
     dynamic var resourceID = 0
     dynamic var resource: Resource?
-    dynamic var revision = 0;
-    
+    dynamic var revision = 0
+
     var exhibitSections: [ExhibitSection] {
         return linkingObjects(ExhibitSection.self, forProperty: "exhibits")
     }
-    
+
+    required convenience init?(_ map: Map) {
+        self.init()
+    }
+
+    func mapping(map: Map) {
+        exhibitID <- map["exhibitID"]
+        name <- map["name"]
+        exhibitSectionID <- map["exhibitSectionID"]
+        viewControllerID <- map["viewControllerID"]
+        text <- map["text"]
+        resourceID <- map["resourceID"]
+        revision <- map["revision"]
+    }
+
     override static func primaryKey() -> String? {
         return "exhibitID"
     }
 }
 
-class ExhibitSection: Object {
+class ExhibitSection: Object, Mappable {
     dynamic var exhibitSectionID = 0
     dynamic var name = ""
     let exhibits = List<Exhibit>()
-    dynamic var revision = 0;
-    
+    dynamic var revision = 0
+
+    required convenience init?(_ map: Map) {
+        self.init()
+    }
+
+    func mapping(map: Map) {
+        exhibitSectionID <- map["exhibitSectionID"]
+        name <- map["name"]
+        revision <- map["revision"]
+    }
+
     override static func primaryKey() -> String? {
         return "exhibitSectionID"
     }
 }
 
-class Resource: Object {
+class Resource: Object, Mappable {
     dynamic var resourceID = 0
     dynamic var url = ""
-    dynamic var revision = 0;
-    
+    dynamic var revision = 0
+
+    required convenience init?(_ map: Map) {
+        self.init()
+    }
+
+    func mapping(map: Map) {
+        resourceID <- map["resourceID"]
+        url <- map["url"]
+        revision <- map["revision"]
+    }
+
     override static func primaryKey() -> String? {
         return "resourceID"
     }
 }
 
-class ViewControllerData: Object {
+class ViewControllerData: Object, Mappable {
     dynamic var viewControllerID = 0
     dynamic var name = ""
     dynamic var segueID = ""
-    dynamic var revision = 0;
-    
+    dynamic var revision = 0
+
+    required convenience init?(_ map: Map) {
+        self.init()
+    }
+
+    func mapping(map: Map) {
+        viewControllerID <- map["viewControllerID"]
+        name <- map["name"]
+        segueID <- map["segueID"]
+        revision <- map["revision"]
+    }
+
     override static func primaryKey() -> String? {
         return "viewControllerID"
     }
 }
 
-class Event: Object {
+class Event: Object, Mappable {
     dynamic var eventID = 0
     dynamic var name = ""
     dynamic var content = ""
@@ -71,16 +138,39 @@ class Event: Object {
     dynamic var resource: Resource?
     dynamic var startTime = NSDate()
     dynamic var endTime = NSDate()
-    dynamic var revision = 0;
+    dynamic var revision = 0
+
+    required convenience init?(_ map: Map) {
+        self.init()
+    }
+
+    func mapping(map: Map) {
+        eventID <- map["eventID"]
+        name <- map["name"]
+        content <- map["content"]
+        resourceID <- map["resourceID"]
+        startTime <- (map["startTime"], ISO8601Transform())
+        endTime <- (map["endTime"], ISO8601Transform())
+        revision <- map["revision"]
+    }
 
     override static func primaryKey() -> String? {
         return "eventID"
     }
 }
 
-class Metadata: Object {
+class Metadata: Object, Mappable {
     dynamic var metadataID = 0
     dynamic var revision = 0
+
+    required convenience init?(_ map: Map) {
+        self.init()
+    }
+
+    func mapping(map: Map) {
+        metadataID <- map["metadataID"]
+        revision <- map["revision"]
+    }
 
     override static func primaryKey() -> String? {
         return "metadataID"
