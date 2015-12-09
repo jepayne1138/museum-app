@@ -55,9 +55,7 @@ func handleUpdateJSON(json: NSDictionary) {
     // Create new models for dependant objects
     if let jsonEvents = json["events"] as? [NSDictionary] {
         for jsonEvent in jsonEvents {
-            print(jsonEvent)
             let event = Mapper<Event>().map(jsonEvent)!
-            print(event)
             // Add the Resource object
             event.resource = realm.objectForPrimaryKey(Resource.self, key: event.resourceID)
             events.append(event)
@@ -84,9 +82,9 @@ func handleUpdateJSON(json: NSDictionary) {
         for exhibit in exhibits {
             realm.add(exhibit)
         }
+        // Update revision value after update is complete
+        realm.objectForPrimaryKey(Metadata.self, key: 0)?.revision = json["revision"] as! Int
     }
-    
-    print(events)
 }
 
 class MainTableViewController: UITableViewController {
@@ -121,8 +119,8 @@ class MainTableViewController: UITableViewController {
 
         // Get a new Realm instance
         let realm = try! Realm()
+        // Create a new metadata instance it none exists
         if (realm.objectForPrimaryKey(Metadata.self, key: 0) == nil) {
-            // Create a new metadata instance
             try! realm.write {
                 realm.create(Metadata.self, value: ["revision": 0], update: true)
             }
@@ -143,65 +141,6 @@ class MainTableViewController: UITableViewController {
             }
         }
         // */
-
-
-        /* Sample Realm Data (add / to begining to use)
-        let section1 = ExhibitSection(value: ["exhibitSectionID": 0, "name": "Section 1"])
-        let section2 = ExhibitSection(value: ["exhibitSectionID": 1, "name": "Section 2"])
-
-        let emptyResource = Resource()
-
-        let textViewController = ViewControllerData(value: ["viewControllerID": 1, "name" : "TextViewController", "segueID": "toExhibitTextController"])
-        let imageViewController = ViewControllerData(value: ["viewControllerID": 2, "name" : "ImageViewController", "segueID": "toExhibitImageController"])
-
-        let testExhibit = Exhibit()
-        testExhibit.exhibitID = 2
-        testExhibit.name = "Test Exhibit"
-        testExhibit.viewController = textViewController
-        testExhibit.title = "Exhibit 1"
-        testExhibit.text = "Example text goes here"
-        testExhibit.resource = emptyResource
-
-        let testExhibit2 = Exhibit()
-        testExhibit2.exhibitID = 3
-        testExhibit2.name = "Test Exhibit 2"
-        testExhibit2.viewController = textViewController
-        testExhibit2.title = "Exhibit 2"
-        testExhibit2.text = "Exhibit 2 text goes here"
-        testExhibit2.resource = emptyResource
-
-
-        section1.exhibits.append(testExhibit)
-        section2.exhibits.append(testExhibit2)
-
-        // Events
-        let event1 = Event()
-        event1.eventID = 0
-        event1.name = "Event 1"
-        event1.content = "Description goes here"
-
-        // Add to the Realm inside a transaction
-        try! realm.write {
-            // Add sections
-            realm.add(section1)
-            realm.add(section2)
-
-            // Add resources
-            realm.add(emptyResource)
-
-            // Add view controllers
-            realm.add(textViewController)
-            realm.add(imageViewController)
-
-            // Add exhibits
-            realm.add(testExhibit)
-            realm.add(testExhibit2)
-
-            // Add events
-            realm.add(event1)
-        }
-        // */
-
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
