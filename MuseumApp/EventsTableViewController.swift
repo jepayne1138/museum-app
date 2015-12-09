@@ -20,8 +20,10 @@ class EventsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        events = realm.objects(Event).sorted("startTime")
-
+        let currentTime = NSDate()
+        
+        events = realm.objects(Event).sorted("startTime").filter("endTime >= %@", currentTime)
+        
         // Initialize the date formatters
         timeFormat.timeStyle = NSDateFormatterStyle.ShortStyle
         dateFormat.dateStyle = NSDateFormatterStyle.ShortStyle

@@ -15,6 +15,15 @@ func handleUpdateJSON(json: NSDictionary) {
     // New realm as this is called asyncronously in an Alamofire response handling closure
     let realm = try! Realm()
     
+//    let path = NSBundle.mainBundle().pathForResource("Info", ofType: "plist")
+//    let dict = NSDictionary(contentsOfFile: path!) as? [String: AnyObject]
+//    let baseURL = dict!["com.payne.ios.baseurl"] as? String
+//    
+//    let destination: (NSURL, NSHTTPURLResponse) -> (NSURL) = {
+//        (_, response) in
+//        return uniqueFilename(response.suggestedFilename!)
+//    }
+    
     // Arrays of new model objects to up added or updated
     var viewControllers = [ViewControllerData]()
     var exhibitSections = [ExhibitSection]()
@@ -35,7 +44,9 @@ func handleUpdateJSON(json: NSDictionary) {
     }
     if let jsonResources = json["resources"] as? [NSDictionary] {
         for jsonResource in jsonResources {
-            resources.append(Mapper<Resource>().map(jsonResource)!)
+            let resource = Mapper<Resource>().map(jsonResource)!
+            resources.append(resource)
+//            Alamofire.download(.GET, "\(baseURL!)\(resource.url)", destination: destination)
         }
     }
     
@@ -87,6 +98,14 @@ func handleUpdateJSON(json: NSDictionary) {
     }
 }
 
+func uniqueFilename(custom: String) -> NSURL {
+    // Guarentees uniqueness for the filename in the default document directory
+    let directoryURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+    let uuid: CFUUIDRef = CFUUIDCreate(nil)
+    let uuidString = CFUUIDCreateString(nil, uuid)
+    return directoryURL.URLByAppendingPathComponent("\(uuidString).\(custom)")
+}
+
 class MainTableViewController: UITableViewController {
 
     struct SegueInfo {
@@ -103,7 +122,7 @@ class MainTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if let path = NSBundle.mainBundle().pathForResource("Info", ofType: "plist"), dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
             baseURL = dict["com.payne.ios.baseurl"] as? String
         }
