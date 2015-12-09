@@ -7,3 +7,4 @@ use_frameworks!
 # The dependency we want to use. You can add more here if you'd like!
 pod 'RealmSwift'
 pod 'Alamofire', '~>3.0'
+pod 'ObjectMapper', '~>1.0'
