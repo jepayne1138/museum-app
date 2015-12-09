@@ -94,6 +94,7 @@ class ExhibitSection: Object, Mappable {
 class Resource: Object, Mappable {
     dynamic var resourceID = 0
     dynamic var url = ""
+    dynamic var localPath = ""
     dynamic var revision = 0
 
     required convenience init?(_ map: Map) {
