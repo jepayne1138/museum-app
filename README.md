@@ -17,18 +17,6 @@ TODO List:
   * Create a layout for the information page, more ViewControllers if necessary
   * Parse information data from API calls
   * Realm model for information
-* Media resources
-  * Set up download of resources by url if indicated updated by API call
-  * Base URL can be gotten from config file with the following (include trailing slash)
-```swift
-var baseURL: String?
-if let path = NSBundle.mainBundle().pathForResource("Info", ofType: "plist"), dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
-    baseURL = dict["com.payne.ios.baseurl"] as? String
-}
-```
-  * Figure our where these files are stored
-  * Possibly add another property to Realm Resource model with local directory
-  * Remove old media files if not referenced by any resource?
 * Exhibit ViewControllers
   * All ExhibitViewControllers (Except Text in many cases)
     * Create Outlets to Views in Storyboard
@@ -47,6 +35,7 @@ Minor issues, not top priority:
 * Update ISO8601Transform to include support for optional ISO 8601 formats
 * Event date currently pulled from startTime: can't really display multi-day/overnight events in any way
 * Remove events from Realm after end time has passed?
+* Media resources - Remove old media files if not referenced by any resource
 
 BEACONS!
 * Have beacons (4), need to activate, we'll take it from there
@@ -54,7 +43,6 @@ BEACONS!
 * Add some kind of Tour? ViewController to select for live tracking with beacons (and add to menu)
 
 Backend TODO List:
-* Figure out where to place files on server so they can be downloaded and update resource table
 * Create database and API entries for information content
 * Figure out how to serve with SSL before final app deployment
 

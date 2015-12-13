@@ -9,11 +9,21 @@
 import UIKit
 
 class ExhibitImageViewController: ExhibitViewControllerBase {
+    
+    @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet weak var descriptionTextView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        print(exhibit!.resource!.localPath)
+        print("File exists? : \(NSFileManager.defaultManager().fileExistsAtPath(exhibit!.resource!.localPath))")
+
+        let mainImage = UIImage(contentsOfFile: exhibit!.resource!.localPath)
+        mainImageView.image = mainImage
+        
+        descriptionTextView.text = exhibit!.text
     }
 
     override func didReceiveMemoryWarning() {
