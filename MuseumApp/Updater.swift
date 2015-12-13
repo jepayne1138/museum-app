@@ -169,15 +169,17 @@ func saveDownloadedFile(downloadTask: NSURLSessionDownloadTask, location: NSURL)
     // New realm as this is called asyncronously in an Alamofire response handling closure
     let realm = try! Realm()
     let resource = realm.objects(Resource).filter("taskIdentifier = %@", downloadTask.taskIdentifier)[0]
-    let localPath = uniqueFilename(resource.url).absoluteString
-
+    let localPath = uniqueFilename(resource.url)
+    
     // Move the temporary file to the permanant location
-    try! NSFileManager.defaultManager().moveItemAtPath(location.absoluteString, toPath: localPath)
+//    print("Src: \(location.path!)")
+//    print("File exists? : \(NSFileManager.defaultManager().fileExistsAtPath(location.path!))")
+//    print("Dst: \(localPath)")
+    try! NSFileManager.defaultManager().copyItemAtURL(location, toURL: localPath)
     
     // Update the realm to indicate that the was properly saved
     try! realm.write {
-        resource.localPath = localPath
+        resource.localPath = localPath.path!
         resource.taskIdentifier = 0
     }
 }
-
