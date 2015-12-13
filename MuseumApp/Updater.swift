@@ -95,7 +95,7 @@ func handleUpdateJSON(json: NSDictionary) {
     if let jsonResources = json["resources"] as? [NSDictionary] {
         for jsonResource in jsonResources {
             let resource = Mapper<Resource>().map(jsonResource)!
-            if (resource.url.isEmpty) {
+            if !resource.url.isEmpty {
                 let url = NSMutableURLRequest(URL: NSURL(string: "\(BaseURLs.baseURL)resources/\(resource.url)")!)
                 let downloadTask = backgroundSession.downloadTaskWithRequest(url)
                 resource.taskIdentifier = downloadTask.taskIdentifier  // Set taskIdentifier in Realm to match task when complete
