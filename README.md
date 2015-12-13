@@ -37,6 +37,7 @@ Minor issues, not top priority:
 * Event date currently pulled from startTime: can't really display multi-day/overnight events in any way
 * Remove events from Realm after end time has passed?
 * Media resources - Remove old media files if not referenced by any resource
+* Zoomable and scrollable UIImageView (possible PhotoScroller type view?)
 
 ####BEACONS!
 * Have beacons (4), need to activate, we'll take it from there
