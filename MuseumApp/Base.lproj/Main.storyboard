@@ -115,9 +115,9 @@
                     <connections>
                         <segue destination="JEt-U6-TBc" kind="show" identifier="toExhibitTextController" id="drB-s6-5Us"/>
                         <segue destination="M0r-et-InD" kind="show" identifier="toExhibitImageController" id="KbG-a8-2dx"/>
+                        <segue destination="Ap5-qr-kUl" kind="show" identifier="toExhibitVideoController" id="X2C-qg-U35"/>
                         <segue destination="MK1-dc-LUj" kind="show" identifier="toExhibitAudioController" id="TXH-dg-pLz"/>
                         <segue destination="uoI-6I-QCE" kind="show" identifier="toExhibitWebController" id="k3X-FQ-9RX"/>
-                        <segue destination="PGQ-tn-57G" kind="show" identifier="toExhibitVideoController" id="AnN-3Y-1Ty"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xi0-sa-hAc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -160,14 +160,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fso-fC-fyL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2143" y="-966"/>
-        </scene>
-        <!--AV Player View Controller-->
-        <scene sceneID="Rz5-oe-1OI">
-            <objects>
-                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="PGQ-tn-57G" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iCI-Qo-OH2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2917" y="-966"/>
         </scene>
         <!--ImageViewController-->
         <scene sceneID="xiR-ez-FXe">
@@ -223,6 +215,25 @@
             </objects>
             <point key="canvasLocation" x="2143" y="-290"/>
         </scene>
+        <!--VideoViewController-->
+        <scene sceneID="dgP-I4-i8V">
+            <objects>
+                <viewController id="Ap5-qr-kUl" customClass="ExhibitVideoViewController" customModule="MuseumApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bEh-Su-3gm"/>
+                        <viewControllerLayoutGuide type="bottom" id="0RD-dW-llC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NKF-1e-Aa3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="VideoViewController" id="ztb-wr-fKZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VHG-k8-enJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2917" y="-966"/>
+        </scene>
         <!--AudioViewController-->
         <scene sceneID="EUm-jJ-Bj9">
             <objects>
@@ -268,9 +279,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="WebViewController" id="p5d-1A-zrX"/>
-                    <connections>
-                        <outlet property="webView" destination="mpr-jR-Dtm" id="Noj-Sc-Rgl"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zC0-8W-rCi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
