@@ -164,7 +164,7 @@
         <!--ImageViewController-->
         <scene sceneID="xiR-ez-FXe">
             <objects>
-                <viewController id="M0r-et-InD" sceneMemberID="viewController">
+                <viewController id="M0r-et-InD" customClass="ExhibitImageViewController" customModule="MuseumApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kGd-EG-EnP"/>
                         <viewControllerLayoutGuide type="bottom" id="6Cg-gu-VfG"/>
@@ -219,7 +219,7 @@
         <!--VideoViewController-->
         <scene sceneID="dgP-I4-i8V">
             <objects>
-                <viewController id="Ap5-qr-kUl" sceneMemberID="viewController">
+                <viewController id="Ap5-qr-kUl" customClass="ExhibitVideoViewController" customModule="MuseumApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bEh-Su-3gm"/>
                         <viewControllerLayoutGuide type="bottom" id="0RD-dW-llC"/>
@@ -238,7 +238,7 @@
         <!--AudioViewController-->
         <scene sceneID="EUm-jJ-Bj9">
             <objects>
-                <viewController id="MK1-dc-LUj" sceneMemberID="viewController">
+                <viewController id="MK1-dc-LUj" customClass="ExhibitAudioViewController" customModule="MuseumApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lUw-At-6XB"/>
                         <viewControllerLayoutGuide type="bottom" id="07e-CN-Ts7"/>
@@ -257,7 +257,7 @@
         <!--WebViewController-->
         <scene sceneID="BAz-Sf-LCo">
             <objects>
-                <viewController id="uoI-6I-QCE" sceneMemberID="viewController">
+                <viewController id="uoI-6I-QCE" customClass="ExhibitWebViewController" customModule="MuseumApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2hb-tA-f6e"/>
                         <viewControllerLayoutGuide type="bottom" id="1Aq-CK-cG0"/>
