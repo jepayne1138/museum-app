@@ -13,10 +13,11 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let networkHandler = DownloadSessionDelegate.sharedInstance
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        initUpdateRealm()
+        
         return true
     }
 
@@ -106,6 +107,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    
+    // MARK: Background session handling
+    func application(application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: () -> Void) {
+        print(" -- handleEventsForBackgroundURLSession -- ")
+        let backgroundConfig = NSURLSessionConfiguration.backgroundSessionConfigurationWithIdentifier(identifier)
+        let backgroundSession = NSURLSession(configuration: backgroundConfig, delegate: self.networkHandler, delegateQueue: nil)
+        print("Rejoining session \(backgroundSession)")
+        
+        self.networkHandler.addCompletionHandler(completionHandler, identifier: identifier)
+    }
 }
 
