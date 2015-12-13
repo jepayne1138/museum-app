@@ -28,6 +28,8 @@
 		38728FB21C14D8AF00007ACE /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38728FB11C14D8AF00007ACE /* EventsTableViewCell.swift */; };
 		38AF091F1C1C7E4100B85F75 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF091E1C1C7E4100B85F75 /* NetworkHandler.swift */; };
 		38AF09211C1CF9F400B85F75 /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF09201C1CF9F400B85F75 /* Updater.swift */; };
+		38AF09251C1E049000B85F75 /* VideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF09241C1E049000B85F75 /* VideoManager.swift */; };
+		38AF09271C1E177D00B85F75 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AF09261C1E177D00B85F75 /* VideoPlayerViewController.swift */; };
 		38DD27421C1382B300470A11 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD27411C1382B300470A11 /* DataModels.swift */; };
 		38DD27431C13830200470A11 /* ExhibitsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382177711BEDBCEF00DF782A /* ExhibitsTableViewController.swift */; };
 		38EBEB721BE6F53900B8A05A /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EBEB711BE6F53900B8A05A /* MainTableViewController.swift */; };
@@ -79,6 +81,8 @@
 		38728FB11C14D8AF00007ACE /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		38AF091E1C1C7E4100B85F75 /* NetworkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		38AF09201C1CF9F400B85F75 /* Updater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
+		38AF09241C1E049000B85F75 /* VideoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoManager.swift; sourceTree = "<group>"; };
+		38AF09261C1E177D00B85F75 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		38B181731C1686DA009A58B1 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		38DD27411C1382B300470A11 /* DataModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		38EBEB711BE6F53900B8A05A /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 				380DA53E1BE5420100976988 /* ViewController.swift */,
 				38AF091E1C1C7E4100B85F75 /* NetworkHandler.swift */,
 				38AF09201C1CF9F400B85F75 /* Updater.swift */,
+				38AF09241C1E049000B85F75 /* VideoManager.swift */,
 				380DA5401BE5420100976988 /* Main.storyboard */,
 				380DA5461BE5420100976988 /* Assets.xcassets */,
 				380DA5481BE5420100976988 /* LaunchScreen.storyboard */,
@@ -160,6 +165,7 @@
 				38728FA31C139D6100007ACE /* ExhibitTextViewController.swift */,
 				38728FA51C13A57800007ACE /* ExhibitImageViewController.swift */,
 				38728FA71C13A58F00007ACE /* ExhibitVideoViewController.swift */,
+				38AF09261C1E177D00B85F75 /* VideoPlayerViewController.swift */,
 				38728FA91C13A5A600007ACE /* ExhibitAudioViewController.swift */,
 				38728FAB1C13A5C300007ACE /* ExhibitWebViewController.swift */,
 				38B181731C1686DA009A58B1 /* Config.xcconfig */,
@@ -406,6 +412,8 @@
 				380DA53F1BE5420100976988 /* ViewController.swift in Sources */,
 				38728FB21C14D8AF00007ACE /* EventsTableViewCell.swift in Sources */,
 				380DA53D1BE5420100976988 /* AppDelegate.swift in Sources */,
+				38AF09251C1E049000B85F75 /* VideoManager.swift in Sources */,
+				38AF09271C1E177D00B85F75 /* VideoPlayerViewController.swift in Sources */,
 				380DA5451BE5420100976988 /* MuseumApp.xcdatamodeld in Sources */,
 				38EBEB761BE6FB9800B8A05A /* MainTableViewCell.swift in Sources */,
 			);
