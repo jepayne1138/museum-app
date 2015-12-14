@@ -18,16 +18,10 @@ everything works outside of the simulator
   * Parse information data from API calls
   * Realm model for information
 * Exhibit ViewControllers
-  * All ExhibitViewControllers (Except Text in many cases)
-    * Create Outlets to Views in Storyboard
-    * Link data from exhibit properties to respective outlets
-    * Get and display/load resource from local device
-    * Might need to worry about synchronization if updates happened
-    * Make sure media is displayed properly with autolayout
-  * ExhibitVideoController
-    * Figure out which view displays video
+  * All ExhibitViewControllers
+    * Add some kind of notification if resource is not yet downloaded 
   * ExhibitAudioController
-    * Figure out which view controls an audio file
+    * Create audio playback views
 
 ####QOL Changes:
 * Some kind of message if no outstanding events so not just a blank screen
