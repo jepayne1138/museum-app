@@ -130,6 +130,9 @@ func handleUpdateJSON(json: NSDictionary) {
 
     // Write non-dependant objects to the realm
     try! realm.write {
+        for info in information {
+            realm.add(info)
+        }
         for viewController in viewControllers {
             realm.add(viewController)
         }
