@@ -214,14 +214,6 @@
             </objects>
             <point key="canvasLocation" x="2143" y="-290"/>
         </scene>
-        <!--AV Player View Controller-->
-        <scene sceneID="1gJ-aK-n6Q">
-            <objects>
-                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="3ph-xe-gXC" customClass="VideoPlayerViewController" customModule="MuseumApp" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Sm0-aj-lw2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2917" y="-1682"/>
-        </scene>
         <!--VideoViewController-->
         <scene sceneID="dgP-I4-i8V">
             <objects>
@@ -241,7 +233,7 @@
                                 </constraints>
                                 <state key="normal" title="Video not yet downloaded.  Try again later."/>
                                 <connections>
-                                    <segue destination="3ph-xe-gXC" kind="show" id="GD8-SE-amk"/>
+                                    <action selector="playVideoButtonTouchUpInside:" destination="Ap5-qr-kUl" eventType="touchUpInside" id="rCG-NC-gKA"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xHf-OB-t2Q">

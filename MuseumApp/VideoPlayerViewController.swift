@@ -17,7 +17,6 @@ class VideoPlayerViewController: AVPlayerViewController {
 
         // Do any additional setup after loading the view.
         print("self.player = \(self.player!)")
-        
         let avPlayerLayer: AVPlayerLayer = AVPlayerLayer(player: self.player!)
         avPlayerLayer.frame = CGRectMake(0, 0, 200, 200)
         self.view.layer.addSublayer(avPlayerLayer)

@@ -36,18 +36,30 @@ class ExhibitVideoViewController: ExhibitViewControllerBase {
         descriptionTextView.text = exhibit!.text
     }
 
+    @IBAction func playVideoButtonTouchUpInside(sender: UIButton) {
+            if (localPathURL! != "") {
+                let player = AVPlayer(URL: NSURL(fileURLWithPath: localPathURL!))
+                let playerController = AVPlayerViewController()
+                playerController.player = player
+                self.presentViewController(playerController, animated: true) {
+                    player.play()
+                }
+            }
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let destView = segue.destinationViewController as? AVPlayerViewController
+        let destView = segue.destinationViewController as? VideoPlayerViewController
 
         if let unwrappedPath = localPathURL {
             let url = NSURL(string: unwrappedPath)
