@@ -17,11 +17,6 @@ everything works outside of the simulator
   * Create a layout for the information page, more ViewControllers if necessary
   * Parse information data from API calls
   * Realm model for information
-* Exhibit ViewControllers
-  * All ExhibitViewControllers
-    * Add some kind of notification if resource is not yet downloaded 
-  * ExhibitAudioController
-    * Create audio playback views
 
 ####QOL Changes:
 * Some kind of message if no outstanding events so not just a blank screen
@@ -32,6 +27,7 @@ Minor issues, not top priority:
 * Remove events from Realm after end time has passed?
 * Media resources - Remove old media files if not referenced by any resource
 * Zoomable and scrollable UIImageView (possible PhotoScroller type view?)
+* ExhibitAudioController - Implement slider for audio playback
 
 ####BEACONS!
 * Have beacons (4), need to activate, we'll take it from there
