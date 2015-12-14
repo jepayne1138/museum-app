@@ -12,24 +12,69 @@ import AVFoundation
 
 class ExhibitAudioViewController: ExhibitViewControllerBase {
 
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var playToggleButton: UIButton!
+    @IBOutlet weak var audioSlider: UISlider!
+
     var audio: AVAudioPlayer!
+    var autoplay = false
+    var playing = false
+
+    let playImage = UIImage(named: "play")
+    let pauseImage = UIImage(named: "pause")
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let playImage = UIImage(named: "play")
-        let pauseImage = UIImage(named: "pause")
+        // Set description text
+        descriptionTextView.text = exhibit!.text
+
+        // Set default button image
+        if (autoplay) {
+            playToggleButton.setImage(pauseImage, forState: UIControlState.Normal)
+        } else {
+            playToggleButton.setImage(playImage, forState: UIControlState.Normal)
+        }
+
+        // Set the inital slider position
+        audioSlider.value = 0
 
         if (exhibit!.resource!.localPath != "") {
             let url = NSURL(fileURLWithPath: exhibit!.resource!.localPath)
 
             do {
-                let audio = try AVAudioPlayer(contentsOfURL: url)
-                audio.play()
+                audio = try AVAudioPlayer(contentsOfURL: url)
+                if (autoplay) {
+                    audio.play()
+                    playing = true
+                }
             } catch {
                 print("Unable to load file for audio: \(audio)")
             }
+        }
+    }
+
+    @IBAction func playToggleButtonTouchUpInside(sender: UIButton) {
+        // Handle the actual loggic for toggling play and pause
+        if (audio != nil) {
+            if (playing) {
+                audio.pause()
+                playing = false
+            } else {
+                audio.play()
+                playing = true
+            }
+        }
+
+        // Toggle the autoplay variable
+        playing = !playing
+
+        // Set the button image to the new image
+        if (playing) {
+            playToggleButton.setImage(playImage, forState: UIControlState.Normal)
+        } else {
+            playToggleButton.setImage(pauseImage, forState: UIControlState.Normal)
         }
     }
 
