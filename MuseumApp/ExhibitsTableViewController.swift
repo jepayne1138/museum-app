@@ -22,7 +22,9 @@ class ExhibitsTableViewController: UITableViewController {
 
         exhibitSections = realm.objects(ExhibitSection)
         exhibits = realm.objects(Exhibit)
-        
+
+        self.tableView.tableFooterView = UIView()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

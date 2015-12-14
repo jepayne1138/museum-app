@@ -27,7 +27,9 @@ class EventsTableViewController: UITableViewController {
         // Initialize the date formatters
         timeFormat.timeStyle = NSDateFormatterStyle.ShortStyle
         dateFormat.dateStyle = NSDateFormatterStyle.ShortStyle
-        
+
+        self.tableView.tableFooterView = UIView()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
