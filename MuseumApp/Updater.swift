@@ -37,8 +37,23 @@ func initUpdateRealm() {
     }
     // */
 
+    let realm: Realm!
     // Get a new Realm instance
-    let realm = try! Realm()
+    do {
+        realm = try Realm()
+    } catch {
+        // If the realm cannot be created, delete the realm file
+        print("Could not load the realm, so old realm was removed and data will be recreated.")
+        print("App should be removed to clear any old existing files.")
+        do {
+            print(Realm.Configuration.defaultConfiguration.path!)
+            try NSFileManager.defaultManager().removeItemAtPath(Realm.Configuration.defaultConfiguration.path!)
+        } catch {
+            // Pass
+        }
+        // Retry getting the realm
+        realm = try! Realm()
+    }
     // Create a new metadata instance it none exists
     if (realm.objectForPrimaryKey(Metadata.self, key: 0) == nil) {
         try! realm.write {
