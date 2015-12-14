@@ -85,6 +85,7 @@ func handleUpdateJSON(json: NSDictionary) {
     print("UPDATING FROM JSON:  \(json)")
 
     // Arrays of new model objects to up added or updated
+    var information = [GeneralInformation]()
     var viewControllers = [ViewControllerData]()
     var exhibitSections = [ExhibitSection]()
     var resources = [Resource]()
@@ -99,6 +100,11 @@ func handleUpdateJSON(json: NSDictionary) {
 
 
     // Create new models for non-dependate objects
+    if let jsonInformations = json["information"] as? [NSDictionary] {
+        for jsonInformation in jsonInformations {
+            information.append(Mapper<GeneralInformation>().map(jsonInformation)!)
+        }
+    }
     if let jsonViewControllers = json["view_controllers"] as? [NSDictionary] {
         for jsonViewController in jsonViewControllers {
             viewControllers.append(Mapper<ViewControllerData>().map(jsonViewController)!)

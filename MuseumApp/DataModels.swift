@@ -182,3 +182,30 @@ class Metadata: Object, Mappable {
         return "metadataID"
     }
 }
+
+class GeneralInformation: Object, Mappable {
+    dynamic var infoID = 1
+    dynamic var parking = "ahoyhoy park where you want"
+    dynamic var hours  = "show up when you want"
+    dynamic var information = "The museum is great"
+    dynamic var location = "It's in Madison"
+    dynamic var revision = 0
+    
+    required convenience init?(_ map: Map) {
+        self.init()
+    }
+    
+    func mapping (map: Map){
+        infoID <- map["infoID"]
+        parking <- map["parking"]
+        hours <- map["hours"]
+        information <- map["information"]
+        location <- map["location"]
+        revision <- map["revision"]
+    }
+    override static func primaryKey() -> String? {
+        return "infoID"
+    }
+    
+    
+}
