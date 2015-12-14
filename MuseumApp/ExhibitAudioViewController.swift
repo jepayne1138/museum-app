@@ -18,7 +18,6 @@ class ExhibitAudioViewController: ExhibitViewControllerBase {
 
     var audio: AVAudioPlayer!
     var autoplay = false
-    var playing = false
 
     let playImage = UIImage(named: "play")
     let pauseImage = UIImage(named: "pause")
@@ -47,7 +46,6 @@ class ExhibitAudioViewController: ExhibitViewControllerBase {
                 audio = try AVAudioPlayer(contentsOfURL: url)
                 if (autoplay) {
                     audio.play()
-                    playing = true
                 }
             } catch {
                 print("Unable to load file for audio: \(audio)")
@@ -58,23 +56,21 @@ class ExhibitAudioViewController: ExhibitViewControllerBase {
     @IBAction func playToggleButtonTouchUpInside(sender: UIButton) {
         // Handle the actual loggic for toggling play and pause
         if (audio != nil) {
-            if (playing) {
+            if (audio.playing) {
                 audio.pause()
-                playing = false
             } else {
                 audio.play()
-                playing = true
             }
-        }
 
-        // Toggle the autoplay variable
-        playing = !playing
-
-        // Set the button image to the new image
-        if (playing) {
-            playToggleButton.setImage(playImage, forState: UIControlState.Normal)
+            // Set the button image to the new image
+            if (audio.playing) {
+                playToggleButton.setImage(pauseImage, forState: UIControlState.Normal)
+            } else {
+                playToggleButton.setImage(playImage, forState: UIControlState.Normal)
+            }
         } else {
-            playToggleButton.setImage(pauseImage, forState: UIControlState.Normal)
+            // Handle situation if audio is not yet loaded
+            print("Audio is not yet loaded")
         }
     }
 
