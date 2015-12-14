@@ -82,6 +82,8 @@ func handleUpdateJSON(json: NSDictionary) {
     // New realm as this is called asyncronously in an Alamofire response handling closure
     let realm = try! Realm()
 
+    print("UPDATING FROM JSON:  \(json)")
+
     // Arrays of new model objects to up added or updated
     var viewControllers = [ViewControllerData]()
     var exhibitSections = [ExhibitSection]()

@@ -16,11 +16,15 @@ class ExhibitVideoViewController: ExhibitViewControllerBase {
     @IBOutlet weak var descriptionTextView: UITextView!
 
     var localPathURL: String?
+    var headerText: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("ATTEMPTING TO LOAD:  id=\(exhibit!.resource!.resourceID), url=\(exhibit!.resource!.url), localPath=\(exhibit!.resource!.localPath)")
+
         self.automaticallyAdjustsScrollViewInsets = false
+        headerText = ""
 
         localPathURL = exhibit!.resource!.localPath
         if localPathURL! != "" {
@@ -32,6 +36,7 @@ class ExhibitVideoViewController: ExhibitViewControllerBase {
         else {
             // Disable the button as the resource is not yet loaded
             playVideoButton.enabled = false
+            headerText = "Video assest not yet downloaded:  Please try again later.\n\n"
         }
 
         // Do any additional setup after loading the view.
@@ -40,7 +45,7 @@ class ExhibitVideoViewController: ExhibitViewControllerBase {
         self.descriptionTextView.font = UIFont(name: "Helvetica Neue", size: 24)
         self.descriptionTextView.selectable = false
 
-        descriptionTextView.text = exhibit!.text
+        descriptionTextView.text = headerText! + exhibit!.text
     }
 
     @IBAction func playVideoButtonTouchUpInside(sender: UIButton) {

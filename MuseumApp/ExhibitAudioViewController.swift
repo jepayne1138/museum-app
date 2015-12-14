@@ -21,20 +21,17 @@ class ExhibitAudioViewController: ExhibitViewControllerBase {
 
     let playImage = UIImage(named: "play")
     let pauseImage = UIImage(named: "pause")
+    var headerText: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("ATTEMPTING TO LOAD:  id=\(exhibit!.resource!.resourceID), url=\(exhibit!.resource!.url), localPath=\(exhibit!.resource!.localPath)")
+
         self.automaticallyAdjustsScrollViewInsets = false
+        headerText = ""
 
         // Do any additional setup after loading the view.
-        // Set font size
-        self.descriptionTextView.selectable = true
-        self.descriptionTextView.font = UIFont(name: "Helvetica Neue", size: 24)
-        self.descriptionTextView.selectable = false
-        // Set description text
-        descriptionTextView.text = exhibit!.text
-
         // Set default button image
         if (autoplay) {
             playToggleButton.setImage(pauseImage, forState: UIControlState.Normal)
@@ -56,7 +53,18 @@ class ExhibitAudioViewController: ExhibitViewControllerBase {
             } catch {
                 print("Unable to load file for audio: \(audio)")
             }
+            headerText = ""
+        } else {
+            headerText = "Audio assest not yet downloaded:  Please try again later.\n\n"
         }
+
+        // Set font size
+        self.descriptionTextView.selectable = true
+        self.descriptionTextView.font = UIFont(name: "Helvetica Neue", size: 24)
+        self.descriptionTextView.selectable = false
+        // Set description text
+        descriptionTextView.text = headerText! + exhibit!.text
+
     }
 
     @IBAction func playToggleButtonTouchUpInside(sender: UIButton) {
