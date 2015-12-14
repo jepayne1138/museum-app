@@ -27,8 +27,8 @@ func getBaseURL() -> String {
 
 
 func initUpdateRealm() {
-    //* Set up the realm
-    // Purge the realm file for testing purposes
+    // Set up the realm
+    /* Purge the realm file for testing purposes
     do {
         print(Realm.Configuration.defaultConfiguration.path!)
         try NSFileManager.defaultManager().removeItemAtPath(Realm.Configuration.defaultConfiguration.path!)
@@ -47,7 +47,7 @@ func initUpdateRealm() {
     }
     let metadata = realm.objectForPrimaryKey(Metadata.self, key: 0)
 
-    //* Test Alamofire code for updating the app
+    //* Alamofire code for updating the app
     let URL = "\(BaseURLs.baseURL)update?revision=\(metadata!.revision)"
     print(URL)
     Alamofire.request(.GET, URL).responseJSON() {
