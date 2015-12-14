@@ -9,9 +9,8 @@
 import UIKit
 
 class ExhibitWebViewController: ExhibitViewControllerBase {
+    @IBOutlet weak var contentWebView: UIWebView!
 
-    @IBOutlet weak var webView: UIWebView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +20,7 @@ class ExhibitWebViewController: ExhibitViewControllerBase {
         // Currently loads a remote URL from the text field of the exhibit
         let url = NSURL(string: (exhibit!.text))
         let request = NSURLRequest(URL: url!)
-        webView.loadRequest(request)
+        contentWebView.loadRequest(request)
     }
 
     override func didReceiveMemoryWarning() {

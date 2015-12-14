@@ -318,6 +318,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="WebViewController" id="p5d-1A-zrX"/>
+                    <connections>
+                        <outlet property="contentWebView" destination="mpr-jR-Dtm" id="pNa-Dd-X6l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zC0-8W-rCi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
