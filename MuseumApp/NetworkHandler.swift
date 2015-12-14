@@ -82,9 +82,13 @@ class DownloadSessionDelegate : NSObject, NSURLSessionDelegate, NSURLSessionDown
     }
     
     func callCompletionHandlerForSession(identifier: String!) {
-        let handler : CompleteHandlerBlock = handlerQueue[identifier]!
-        handlerQueue!.removeValueForKey(identifier)
-        handler()
+        print("callCompletionHandlerForSession identifier: \(identifier)")
+        if let handler : CompleteHandlerBlock = handlerQueue[identifier] {
+            handlerQueue!.removeValueForKey(identifier)
+            handler()
+        } else {
+            print("callCompletedHandlerForSession ERROR: \(identifier)")
+        }
     }
     
     //MARK: activation methods
