@@ -16,13 +16,20 @@ class ExhibitImageViewController: ExhibitViewControllerBase {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.automaticallyAdjustsScrollViewInsets = false
+
         // Do any additional setup after loading the view.
         print(exhibit!.resource!.localPath)
         print("File exists? : \(NSFileManager.defaultManager().fileExistsAtPath(exhibit!.resource!.localPath))")
 
         let mainImage = UIImage(contentsOfFile: exhibit!.resource!.localPath)
         mainImageView.image = mainImage
-        
+
+        // Set font size
+        self.descriptionTextView.selectable = true
+        self.descriptionTextView.font = UIFont(name: "Helvetica Neue", size: 24)
+        self.descriptionTextView.selectable = false
+
         descriptionTextView.text = exhibit!.text
     }
 

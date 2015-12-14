@@ -25,7 +25,13 @@ class ExhibitAudioViewController: ExhibitViewControllerBase {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.automaticallyAdjustsScrollViewInsets = false
+
         // Do any additional setup after loading the view.
+        // Set font size
+        self.descriptionTextView.selectable = true
+        self.descriptionTextView.font = UIFont(name: "Helvetica Neue", size: 24)
+        self.descriptionTextView.selectable = false
         // Set description text
         descriptionTextView.text = exhibit!.text
 

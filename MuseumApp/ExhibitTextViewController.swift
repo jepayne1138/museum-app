@@ -19,7 +19,8 @@ class ExhibitTextViewController: ExhibitViewControllerBase {
         
         // Set font size
         self.contentTextView.selectable = true
-        self.contentTextView.font = UIFont(name: "Helvetica Neue", size: 18)
+        self.contentTextView.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+//        (name: "Helvetica Neue", size: 24)
         self.contentTextView.selectable = false
 
         self.contentTextView.text = self.exhibit!.text
