@@ -7,13 +7,30 @@
 //
 
 import UIKit
+import AVFoundation
+
 
 class ExhibitAudioViewController: ExhibitViewControllerBase {
+
+    var audio: AVAudioPlayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let playImage = UIImage(named: "play")
+        let pauseImage = UIImage(named: "pause")
+
+        if (exhibit!.resource!.localPath != "") {
+            let url = NSURL(fileURLWithPath: exhibit!.resource!.localPath)
+
+            do {
+                let audio = try AVAudioPlayer(contentsOfURL: url)
+                audio.play()
+            } catch {
+                print("Unable to load file for audio: \(audio)")
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

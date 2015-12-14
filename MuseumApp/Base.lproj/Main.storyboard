@@ -276,7 +276,41 @@
                     <view key="view" contentMode="scaleToFill" id="oQw-oE-vJT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dMb-fW-AD2">
+                                <rect key="frame" x="20" y="72" width="560" height="398"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="F64-9z-z4X">
+                                <rect key="frame" x="18" y="550" width="564" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Z8k-ub-bf9"/>
+                                </constraints>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJx-VJ-fnY">
+                                <rect key="frame" x="268" y="478" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Avb-6i-7dg"/>
+                                    <constraint firstAttribute="width" constant="64" id="KHH-Jb-saP"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nJx-VJ-fnY" firstAttribute="centerX" secondItem="oQw-oE-vJT" secondAttribute="centerX" id="5Hk-cz-10C"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dMb-fW-AD2" secondAttribute="trailing" id="8fV-Sy-8oe"/>
+                            <constraint firstItem="F64-9z-z4X" firstAttribute="top" secondItem="nJx-VJ-fnY" secondAttribute="bottom" constant="8" id="D9N-eR-spN"/>
+                            <constraint firstItem="dMb-fW-AD2" firstAttribute="leading" secondItem="oQw-oE-vJT" secondAttribute="leadingMargin" id="Dsv-pP-eVj"/>
+                            <constraint firstItem="nJx-VJ-fnY" firstAttribute="top" secondItem="dMb-fW-AD2" secondAttribute="bottom" constant="8" id="Eqs-lK-S94"/>
+                            <constraint firstItem="07e-CN-Ts7" firstAttribute="top" secondItem="F64-9z-z4X" secondAttribute="bottom" constant="20" id="Xe1-fQ-QCF"/>
+                            <constraint firstItem="dMb-fW-AD2" firstAttribute="top" secondItem="lUw-At-6XB" secondAttribute="bottom" constant="8" id="joq-2z-gnv"/>
+                            <constraint firstItem="F64-9z-z4X" firstAttribute="leading" secondItem="oQw-oE-vJT" secondAttribute="leadingMargin" id="oha-Bo-JA3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="F64-9z-z4X" secondAttribute="trailing" id="sK1-TX-4e9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="AudioViewController" id="zQb-rc-hQ2"/>
                 </viewController>
