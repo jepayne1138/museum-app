@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ldX-FR-DcN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ldX-FR-DcN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Madison Science Museum-->
@@ -173,8 +173,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VJM-Qd-dGG">
+                                <rect key="frame" x="20" y="72" width="560" height="396"/>
+                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="72" width="0.0" height="0.0"/>
+                                </variation>
+                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="paB-V0-sei">
-                                <rect key="frame" x="20" y="477" width="560" height="123"/>
+                                <rect key="frame" x="20" y="468" width="560" height="132"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -186,25 +192,18 @@
                                     <rect key="frame" x="20" y="600" width="760" height="0.0"/>
                                 </variation>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VJM-Qd-dGG">
-                                <rect key="frame" x="20" y="72" width="560" height="405"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="VJM-Qd-dGG" secondAttribute="height" multiplier="112:81" id="xF1-w1-cqC"/>
-                                </constraints>
-                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="20" y="72" width="0.0" height="0.0"/>
-                                </variation>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="paB-V0-sei" firstAttribute="trailing" secondItem="w4C-2k-Mrc" secondAttribute="trailingMargin" id="2n1-FQ-ImM"/>
-                            <constraint firstItem="paB-V0-sei" firstAttribute="leading" secondItem="w4C-2k-Mrc" secondAttribute="leadingMargin" id="6zs-Y3-U4v"/>
-                            <constraint firstItem="VJM-Qd-dGG" firstAttribute="top" secondItem="kGd-EG-EnP" secondAttribute="bottom" constant="8" id="9Z7-2k-ojW"/>
-                            <constraint firstItem="paB-V0-sei" firstAttribute="top" secondItem="VJM-Qd-dGG" secondAttribute="bottom" id="NBo-oF-foL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="VJM-Qd-dGG" secondAttribute="trailing" id="cYN-5T-xOE"/>
-                            <constraint firstItem="6Cg-gu-VfG" firstAttribute="top" secondItem="paB-V0-sei" secondAttribute="bottom" id="oIK-eN-6S0"/>
-                            <constraint firstItem="VJM-Qd-dGG" firstAttribute="leading" secondItem="w4C-2k-Mrc" secondAttribute="leadingMargin" id="pxz-Zf-vvA"/>
+                            <constraint firstItem="VJM-Qd-dGG" firstAttribute="height" secondItem="paB-V0-sei" secondAttribute="height" multiplier="3" id="4X7-ac-imd"/>
+                            <constraint firstItem="VJM-Qd-dGG" firstAttribute="trailing" secondItem="w4C-2k-Mrc" secondAttribute="trailingMargin" id="8kS-C3-Jjg"/>
+                            <constraint firstItem="paB-V0-sei" firstAttribute="top" secondItem="VJM-Qd-dGG" secondAttribute="bottom" id="TgA-uE-yjs"/>
+                            <constraint firstItem="paB-V0-sei" firstAttribute="top" secondItem="VJM-Qd-dGG" secondAttribute="bottom" id="bBj-JR-RJb"/>
+                            <constraint firstItem="VJM-Qd-dGG" firstAttribute="top" secondItem="kGd-EG-EnP" secondAttribute="bottom" constant="8" id="eX7-nX-nOr"/>
+                            <constraint firstItem="paB-V0-sei" firstAttribute="trailing" secondItem="w4C-2k-Mrc" secondAttribute="trailingMargin" id="lth-9e-0hK"/>
+                            <constraint firstItem="6Cg-gu-VfG" firstAttribute="top" secondItem="paB-V0-sei" secondAttribute="bottom" id="mn4-5P-n5F"/>
+                            <constraint firstItem="VJM-Qd-dGG" firstAttribute="leading" secondItem="w4C-2k-Mrc" secondAttribute="leadingMargin" id="qO4-Ka-fNF"/>
+                            <constraint firstItem="paB-V0-sei" firstAttribute="leading" secondItem="w4C-2k-Mrc" secondAttribute="leadingMargin" id="qn1-O4-ESL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ImageViewController" id="B9a-MV-Txc"/>
@@ -230,17 +229,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnn-Mr-jf3">
-                                <rect key="frame" x="20" y="72" width="560" height="405"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="vnn-Mr-jf3" secondAttribute="height" multiplier="112:81" id="PfZ-2t-uDL"/>
-                                </constraints>
+                                <rect key="frame" x="20" y="72" width="560" height="396"/>
                                 <state key="normal" title="Video not yet downloaded.  Try again later."/>
                                 <connections>
                                     <action selector="playVideoButtonTouchUpInside:" destination="Ap5-qr-kUl" eventType="touchUpInside" id="rCG-NC-gKA"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xHf-OB-t2Q">
-                                <rect key="frame" x="20" y="477" width="560" height="123"/>
+                                <rect key="frame" x="20" y="468" width="560" height="132"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -249,13 +245,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vnn-Mr-jf3" firstAttribute="leading" secondItem="NKF-1e-Aa3" secondAttribute="leadingMargin" id="1xh-Pi-fEr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xHf-OB-t2Q" secondAttribute="trailing" id="CRQ-MH-0Xx"/>
-                            <constraint firstItem="vnn-Mr-jf3" firstAttribute="top" secondItem="bEh-Su-3gm" secondAttribute="bottom" constant="8" id="M1i-p5-NQG"/>
-                            <constraint firstItem="xHf-OB-t2Q" firstAttribute="top" secondItem="vnn-Mr-jf3" secondAttribute="bottom" id="M34-vX-eVc"/>
-                            <constraint firstItem="0RD-dW-llC" firstAttribute="top" secondItem="xHf-OB-t2Q" secondAttribute="bottom" id="R22-GC-aBq"/>
-                            <constraint firstItem="xHf-OB-t2Q" firstAttribute="leading" secondItem="NKF-1e-Aa3" secondAttribute="leadingMargin" id="iNb-no-Cqy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vnn-Mr-jf3" secondAttribute="trailing" id="x4Q-Bo-QLb"/>
+                            <constraint firstItem="vnn-Mr-jf3" firstAttribute="top" secondItem="bEh-Su-3gm" secondAttribute="bottom" constant="8" id="1Aq-JP-nh0"/>
+                            <constraint firstItem="xHf-OB-t2Q" firstAttribute="top" secondItem="vnn-Mr-jf3" secondAttribute="bottom" id="EHD-a4-3UN"/>
+                            <constraint firstItem="vnn-Mr-jf3" firstAttribute="height" secondItem="xHf-OB-t2Q" secondAttribute="height" multiplier="3" id="KdR-2l-eME"/>
+                            <constraint firstItem="vnn-Mr-jf3" firstAttribute="trailing" secondItem="NKF-1e-Aa3" secondAttribute="trailingMargin" id="UZE-BO-ZzC"/>
+                            <constraint firstItem="0RD-dW-llC" firstAttribute="top" secondItem="xHf-OB-t2Q" secondAttribute="bottom" id="Vuq-pT-5pG"/>
+                            <constraint firstItem="xHf-OB-t2Q" firstAttribute="top" secondItem="vnn-Mr-jf3" secondAttribute="bottom" id="aC3-b7-Pw1"/>
+                            <constraint firstItem="xHf-OB-t2Q" firstAttribute="leading" secondItem="NKF-1e-Aa3" secondAttribute="leadingMargin" id="aMa-xM-HfA"/>
+                            <constraint firstItem="xHf-OB-t2Q" firstAttribute="trailing" secondItem="NKF-1e-Aa3" secondAttribute="trailingMargin" id="gWK-W0-rng"/>
+                            <constraint firstItem="vnn-Mr-jf3" firstAttribute="leading" secondItem="NKF-1e-Aa3" secondAttribute="leadingMargin" id="grb-u8-ALE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="VideoViewController" id="ztb-wr-fKZ"/>
